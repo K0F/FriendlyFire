@@ -12,7 +12,7 @@ Please exachange ```/dev/<your device name>``` accordingly to your system USB de
 + ```run.sh``` is a file called after system boot (cronjob), it should start video playback which is listening to /home/pi/ctl FIFO
 + ```shieldsUp.sh``` brings all the shields and moves mirror into UP position
 + ```shieldsDown.sh``` brings shields down
-+ ```carouselOn.sh``` tunrns on the carousel projector
++ ```carouselOn.sh``` turns on the carousel projector
 + ```carouselOff.sh``` turns carousel off
 + ```carouselAdvance.sh``` advances carousel forward one slide per run
 + ```allOff.sh``` turns all relayboard outputs to LOW state
