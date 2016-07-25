@@ -12,7 +12,7 @@ function carouselOn {
   (echo -n "/0000001" > /dev/ttyACM0)&
 }
 
-function carouseOff {
+function carouselOff {
   (echo -n "/0000002" > /dev/ttyACM0)&
 }
 
