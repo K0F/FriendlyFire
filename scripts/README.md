@@ -11,7 +11,7 @@ Please exachange ```/dev/<your device name>``` accordingly to your system USB de
 
 ```run.sh``` is a script called after system boot (via cronjob), it starts video playback which is listening to /home/pi/ctl FIFO control messages
 
-```master.sh``` is a set of functions for controlling the rest of relay functions, they are following
+```master.sh``` is a set of functions for controlling the rest of relay functions, they are following:
 
 + ```shieldsUp``` brings all the shields and moves mirror into UP position
 + ```shieldsDown``` brings shields down
@@ -20,6 +20,6 @@ Please exachange ```/dev/<your device name>``` accordingly to your system USB de
 + ```carouselAdvance``` advances carousel forward one slide per run
 + ```allOff``` turns all relayboard outputs to LOW state
 
-All the functions runs in the background, be careful executing many of them in short period of time.
+All these functions runs in the background, be careful executing many of them in short period of time.
 
 _(.. more to come)_
