@@ -1,0 +1,6 @@
+./create_link actor /unicom/actor/actor110
+./create_link logicdd /unicom/logicdd/logicdd101
+./create_link mididd /unicom/mididd/mididd150
+./create_link optodd /unicom/optodd/optodd120
+./create_link picdd /unicom/picdd/picdd130
+./create_link serialdd /unicom/serialdd/serialdd140

@@ -1,0 +1,1 @@
+#!/bin/shecho stopping automata >>/var/log/automata.logdate >>/var/log/automata.log#killall actorcat /var/run/actor.automata_check_running.pid | xargs killcat /var/run/actor.automata_midi.pid | xargs killsleep 3/actors/automata_check_running.sh &/actors/automata_midi.sh &sleep 5/actors/automata_init.sh &

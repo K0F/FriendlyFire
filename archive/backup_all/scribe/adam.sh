@@ -1,0 +1,1 @@
+#!/bin/bash# first test of an actoractor -v -n adam -f adam.out << CONFIG10.5.1.13 9800 midi   note_on   midi_channel 9    low   0x20    hi    0x70    low_velocity   0x10    hi_velocity    0x70    end10.5.1.1 9700nop 00shelladam.sh &CONFIG

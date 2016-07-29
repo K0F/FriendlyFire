@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n scribe_loop_readwrite -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 105   iterations 0   end10.5.1.14 9800 :90 50 10CONFIG

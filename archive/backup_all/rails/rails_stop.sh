@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n rails_stop -h 10.5.1.10 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.10 9901 :F0\rD1-8@0\rG\rshell killall actor10.5.1.10 9900 :blank\rCONFIG

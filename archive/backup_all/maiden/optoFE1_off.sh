@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n optoFE1_off -h 10.5.1.9 -p 9850 << CONFIG10.5.1.9 9800 midi   note_off   midi_channel 0    low   0x56    hi    0x56    low_velocity   0x01   hi_velocity    0x70    end10.5.1.9 9900 :FEL02CONFIG

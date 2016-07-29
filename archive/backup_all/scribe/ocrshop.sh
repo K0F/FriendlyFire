@@ -1,0 +1,1 @@
+#!/bin/bashocrshop -nogui=yes -imgsrc=/root/ocr.capture -docname=ocr -docnum=1 -pagenum=1 -txtdir=/actors -ovrwrtprot=no

@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n picdd_left03 -h 10.5.1.3 -p 9850 << CONFIG10.5.1.3 9700 midi   note_on   midi_channel 3    low   0x1f   hi    0x1f   low_velocity   0x00    hi_velocity    0x7f    endif %dir3 -eq 1	{	10.5.1.3 9700 :stop 03		shell msleep 500		10.5.1.3 9700 :pos 03 -20000	10.5.1.3 9700 :gtraj 03	}set dir3 0CONFIG

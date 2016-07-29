@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n opto_ping_init -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.14 9900 :FAn0110.5.1.14 9900 :FAk010110.5.1.14 9900 :FAZ001M1010CONFIG

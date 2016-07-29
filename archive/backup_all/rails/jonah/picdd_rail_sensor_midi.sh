@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n picdd_rail_sensor_midi -h 10.5.1.3 -p 9850 << CONFIG10.5.1.15 9800 midi   note_on   midi_channel 0    low   0x01   hi    0x01   low_velocity   0x00    hi_velocity    0x7f    endset sensor_midi %mvelCONFIG

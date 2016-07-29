@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n picdd_ping -h 10.5.1.10 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 0   end# ping rail motor 2 for position10.5.1.10 9700 : ping 02shell msleep 350 # ping rail motor 3 for position#10.5.1.10 9700 : ping 03CONFIG

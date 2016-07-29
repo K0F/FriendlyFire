@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n automata_roland -h 10.5.1.12 -p 9850 << CONFIG10.5.1.12 9800 midi   note_on   midi_channel 10   low   0x3c   hi    0x50   low_velocity   0x00   hi_velocity    0x7f   end10.5.1.12 9800 :90 %mnote %mvelshell msleep 80010.5.1.12 9800 :80 %mnote %mvel CONFIG

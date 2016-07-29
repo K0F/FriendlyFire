@@ -1,0 +1,1 @@
+#!/bin/shecho stopping automata >>/var/log/automata.logdate >>/var/log/automata.logkillall actorsleep 1/actors/p0-7_off.sh/actors/video_rj.sh/actors/oms_st.sh

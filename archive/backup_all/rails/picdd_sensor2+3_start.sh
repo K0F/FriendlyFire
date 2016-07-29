@@ -1,0 +1,1 @@
+#!/bin/sh/actors/picdd_rail01_midi.sh &/actors/picdd_rail_sensor2_midi.sh &/actors/picdd_sensor2.sh &/actors/picdd_rail04_midi.sh &/actors/picdd_rail_sensor3_midi.sh &/actors/picdd_sensor3.sh &

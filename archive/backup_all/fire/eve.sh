@@ -1,0 +1,1 @@
+#!/bin/bash# first test of an immediate actoractor -d1 -n eve -h 10.5.1.15 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 1   loop_delay 5   iterations 5   end# this is a commentshell echo here 1CONFIG

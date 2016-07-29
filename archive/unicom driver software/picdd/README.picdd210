@@ -1,0 +1,122 @@
+
+                                 README.pic210
+                           Release Notes for picdd210
+                              picdd version 2.10
+                                 April 12, 1998
+
+Version 2.10 is a feature enhancement and maintenance release of the pic device
+driver.  This version adds two new homing mode commands, as well as activating
+the limit switch functionality.  In addition, this version uses a new internal
+structure for accessing the serial port.  A minor change in the stat function
+has also been crafted.
+
+------------------------------------------------------------------------------   
+
+Homing Modes:
+Starting with V2.10 two new commands are supported; home1 and home2.  These have
+the same syntax as other commands, ie <command> <address>.  Each of these
+commands writes to the motor controller a homing mode command.  This homing mode
+causes the motor to stop moving and treat as home the position at which the
+limit switch (either 1 or 2, depending on the command) is activated. The
+activation of limit switches seems to be edge triggered, in that the switch can
+be wired either normally on or normally off.  The mode must be followed with a
+movement command, so that homing the motor might consist of the following
+sequence:
+               home1 09
+               vel 09 1000
+               vmode 09 rev
+
+
+Limit Switches:
+Starting with V2.10 the picdd is able to generate midi notes related to a change
+in the limit switches.  This functionality is part of the ping or stat
+operation, and not an asynchronous event.  To use the limit switches, the user
+must add two lines to the config file for the motor axis, specifying the midi
+note to be used whenever limit switch 1 or 2 undergoes a state change.  See the
+Configuration File section for details.  
+
+On every PING or STAT command the response from the controller is processed for
+limit switch changes.  If the state of either limit switch has changed from the
+previous check, the midi note corresponding to the channel and note values
+sepcified for that axis is generated.  The velocity indicates the state of the
+limit switch, where a velocity of 0 indicates the limit switch is low (closed to
+ground) and a velocity of 0x7f indicates the limit switch is high (floating
+open).
+
+These notes are not exclusive, and may appear along with the normal positional
+update.  In other words, there may be three midi notes that are sent as a result
+of a PING command, one for the position update, and one for each limit switch.
+
+
+STAT command change:
+The STAT command has been altered slightly, and now behaves slightly different
+than the PING command.  The PING command, as you will recall, only results in
+midi notes if the note value changes.  The STAT command also used to function in
+this manner.  Starting with version 2.10, the STAT command always generates a
+midi note corresponding to the position, regardless of whether or not the
+position has changed from the last PING or STAT command.  This will probably be
+useful in determining where motors are in an asynchronous manner.
+
+
+Configuration File:
+The configuration file must be in the default directory when the picdd is
+started, and must be called 'picdd.cfg'.  It should contain the following
+entries (the comments are optional):
+
+addr 9               //the lines to follow apply to motor address 9
+	p0    0           //the base position
+	p1    100000      //the end positon
+	pn0   16          //the note associated with the base position
+	pn1   32          //the note associated with the end position
+	v0    0           //the base velocity
+	v1    10000       //the end velocity
+	vv0   0           //the midi velocity associated with the base velocity
+	vv1   127         //the midi velocity associated with the end velocity
+	mchan 9           //the midi channel to use
+	mstatnote 08      //the note to issue for status updates
+	mlim1note 01      //the note to issue for limit switch 1 changes
+	mlim2note 02      //the note to issue for limit switch 2 changes
+   
+
+Internal Changes:
+Version 2.10 has a major internal change, in that the serial IO file handle does
+not participate in the selection mechanisim.  In addition, the code keeps track
+of how many bytes it expects to hear in response to the pic command, and only
+goes to listed to the serial IO when a response is expected, and waits for that
+response to the exclusion of doing other things.  A rough flowchart of the code
+looks like this:
+
+      wait for input from any client
+         input received - translate to pic command
+         send to picdd if needed
+         if serial response expected, go to input routine and wait for response
+            process response according to # of bytes expected.
+             timeout if no response,
+             attempt to re-synch if a checksum error
+            generate midi notes from results
+         send midi notes to all connected clients
+         loop back to beginning
+
+The serial timeout is set for 100ms, and the the code keeps track of how many
+bytes it expects in the response.  It will not process another incoming command
+until a response is received of a timeout occurs.  The code does not understand
+group addresses, so it is not capable of knowing that the group address should
+not require a response.  That is on the TODO list for a subsequent revision.
+
+What this buys is a greater degree of reliability for the serial IO, and more
+determinism.  It should be possible to ping multiple motors asynchronously
+without getting timout errors.
+
+The drawback is that there are occaisionally broken pipe errors as the code
+attempts to write midi notes to the clients before checking to see if those
+clients have gone away.  This resulted in a large number of SIGPIPE (broken
+pipe) signals, which are fatal for the process.  Until a better fix can be
+found, the code simply ignores the SIGPIPE signal, although the user may see
+error messages on the screen.  These are 'normal' and should not interfere with
+the proper operations.
+
+   
+------------------------------------------------------------------------------   
+R. Gritzo,
+Jericho Data Systems
+gritzo@concentric.net

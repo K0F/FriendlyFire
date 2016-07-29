@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n picdd_back-forth7 -h 10.5.1.10 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 10   end10.5.1.10 9700 :pos 7 23000shell msleep 3010.5.1.10 9700 :gtraj 7shell sleep 1010.5.1.10 9700 :pos 7 -23000shell msleep 3010.5.1.10 9700 :gtraj 7shell sleep 10CONFIG

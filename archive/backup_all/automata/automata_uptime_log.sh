@@ -1,0 +1,1 @@
+#!/bin/bash##while truedo	date >> /actors/automata_uptime.log	uptime >> /actors/automata_uptime.log	sleep 2m	done

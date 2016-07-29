@@ -1,0 +1,1 @@
+table x + solo outside (1,2&3=131)max Kp 5000   kp 1 2000max Kd 32000  kp 1 15000 try Ki 1000max vel 400000max accel 150table y + duo outside (4,5&6=132)max Kp 5000max Kd 32000try Ki 1000max vel 400000max accel 150duo inside-middle (7&8=133)max Kp 8 7000max Kp 7 5000max Kd 32000try Ki 1000max vel 400000max accel 150

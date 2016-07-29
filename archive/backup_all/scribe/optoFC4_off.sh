@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n optoFC4_off -h 10.5.1.14 -p 9850 << CONFIG10.5.1.14 9800 midi   note_off   midi_channel 15    low   0x37    hi    0x37    low_velocity   0x01   hi_velocity    0x70    end10.5.1.14 9900 :FCL10CONFIG

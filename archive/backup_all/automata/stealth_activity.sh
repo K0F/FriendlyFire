@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n stealth_activity -h 10.5.1.12 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 0   endset activity 0shell sleep 30if %activity -eq 0	{	10.5.1.17 9901 :pl\r	}	CONFIG

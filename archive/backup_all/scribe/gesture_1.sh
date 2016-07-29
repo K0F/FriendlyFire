@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n gesture_1 -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.15 9900 :FCK01shell sleep 310.5.1.15 9900 :FCK02shell sleep 310.5.1.15 9900 :FCL02shell sleep 310.5.1.15 9900 :FCL01CONFIG

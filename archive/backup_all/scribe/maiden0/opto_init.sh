@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n opto_init -h 192.168.2.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end192.168.2.15 9900 :FCA192.168.2.15 9900 :FEA192.168.2.15 9900 :FCGFFFF192.168.2.15 9900 :FEGFFCONFIG

@@ -1,0 +1,1 @@
+#!/bin/sh# Search and replace text in files names matching below.for file in violin*.shdoecho "File original -  $file"cat $file#First pattern is find and second replacesed 's/10.5.1.15 9800/10.5.1.14 9800/g' $file > tempcp temp $fileecho "File replacement"cat $fileecho ""done

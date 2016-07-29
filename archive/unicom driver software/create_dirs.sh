@@ -1,0 +1,14 @@
+mkdir /actors
+mkdir /actors/old
+mkdir /unicom/actor
+mkdir /unicom/actor/old
+mkdir /unicom/logicdd
+mkdir /unicom/logicdd/old
+mkdir /unicom/mididd
+mkdir /unicom/mididd/old
+mkdir /unicom/optodd
+mkdir /unicom/optodd/old
+mkdir /unicom/serialdd
+mkdir /unicom/serialdd/old
+mkdir /unicom/picdd
+mkdir /unicom/picdd/old

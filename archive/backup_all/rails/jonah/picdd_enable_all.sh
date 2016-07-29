@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n picdd_enable_all -h 10.5.1.3 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.3 9700 :enable 0710.5.1.3 9700 :enable 0610.5.1.3 9700 :enable 0510.5.1.3 9700 :enable 0410.5.1.3 9700 :enable 0310.5.1.3 9700 :enable 0210.5.1.3 9700 :enable 01CONFIG

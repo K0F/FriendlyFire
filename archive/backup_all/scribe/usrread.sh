@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n usrread -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 0   end#10.5.1.14 9900 :FAk000F01#shell msleep 250# read the analog input10.5.1.14 9900 :FDL0001shell msleep 35010.5.1.14 9900 :FDL0002shell msleep 35010.5.1.14 9900 :FDL0004shell msleep 350CONFIG

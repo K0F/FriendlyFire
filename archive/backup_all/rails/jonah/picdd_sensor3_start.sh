@@ -1,0 +1,1 @@
+#!/bin/sh#picdd_pos0_132.sh &picdd_rail04_midi.sh &picdd_rail_sensor3_midi.sh &picdd_sensor3.sh &

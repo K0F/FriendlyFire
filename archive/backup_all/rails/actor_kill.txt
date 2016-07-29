@@ -1,0 +1,1 @@
+#cat /var/run/actor.picdd_sensor2.pid | xargs kill#!/bin/sh# kill.sh#cat $1 | xargs kill#Find exec example:#find /var/run -name "actor*" -exec kill.sh {} \;

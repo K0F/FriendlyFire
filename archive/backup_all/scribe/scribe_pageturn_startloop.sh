@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n scribe_pageturn_startloop -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   endset counter 0set loop %counter/5set loop %loop*5shell scribe_pageturn5.sh &CONFIG

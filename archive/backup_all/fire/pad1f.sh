@@ -1,0 +1,1 @@
+#!/bin/sh#actor -d1 -n pad1f -h 10.5.1.15 -p 9850 -f pad1.log << CONFIGactor -d0 -n pad1f -h 10.5.1.15 -p 9850 << CONFIG10.5.1.15 9800 midi   note_on   midi_channel 9    low   0x23   hi    0x23   low_velocity   0x6a    hi_velocity    0x7f    endif %video_mode -eq 1	{	10.5.1.15 9900 :16142 se pl\r	}	     CONFIG

@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n track1 -h 10.5.1.9 -p 9850 << CONFIG10.5.1.9 9800 midi   note_on   midi_channel 0    low   0x01   hi    0x01    low_velocity   0x01   hi_velocity    0x0f    velocity_gran   10   end10.5.1.10 9700 :pos 01 2000010.5.1.10 9700 :traj 0110.5.1.10 9700 :go 01CONFIG

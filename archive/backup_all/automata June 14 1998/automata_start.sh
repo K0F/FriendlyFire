@@ -1,0 +1,1 @@
+#!/bin/shcd /actors/actors/video_pl.shsleep 15/actors/automata_check_running.sh &/actors/automata_midi.sh &/actors/automata_init.sh &#/actors/automata_running.sh &

@@ -1,0 +1,1 @@
+# unicom crontab# MIN HOUR DAY MONTH DAYOFWEEK COMMAND# start up tue thru sun45 9 * * tue-sun /actors/rails_start.sh>>/dev/null# end time05 18 20 jul * /actors/rails_stop.sh>>/dev/null05 18 * * tue-thu /actors/rails_stop.sh>>/dev/null05 21 * * fri /actors/rails_stop.sh>>/dev/null05 18 * * sat-sun /actors/rails_stop.sh>>/dev/null   

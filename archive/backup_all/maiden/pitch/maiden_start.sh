@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n maiden_start -h 10.5.1.9 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.9 9900 :FCK800010.5.1.9 9907 : pl\r10.5.1.9 9906 : pl\r10.5.1.9 9905 : pl\rshell sleep 1010.5.1.9 9907 :35823se50656pl\rCONFIG

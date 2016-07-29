@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n optoFE4_on -h 10.5.1.15 -p 9850 << CONFIG10.5.1.15 9800 midi   note_on   midi_channel 0    low   0x5b   hi    0x5b   low_velocity   0x01   hi_velocity    0x70    end10.5.1.15 9900 :FEK10CONFIG

@@ -1,0 +1,1 @@
+#!/bin/sh# switch back to fuji when no midi inputactor -d0 -n maiden_check_midi -h 10.5.1.9 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 0   endset time 0shell sleep 1 if %time -eq 0	{	if %activity -eq 1		{		10.5.1.9 9902 :@xbx\r		set activity 0		}	}	CONFIG

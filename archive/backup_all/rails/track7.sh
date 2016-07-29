@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n track7 -h 192.168.2.14 -p 9850 << CONFIG192.168.2.14 9800 midi   note_on   midi_channel 0    low   0x01   hi    0x01    low_velocity   0x60   hi_velocity    0x6f    velocity_gran   0   end192.168.2.10 9700 :pos 01 -20000192.168.2.10 9700 :traj 01192.168.2.10 9700 :go 01CONFIG

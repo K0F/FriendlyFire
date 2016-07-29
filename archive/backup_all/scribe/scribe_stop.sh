@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n scribe_stop -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end# all relays off10.5.1.14 9900 :FELFF# turn off all lights10.5.1.10 9901 :F0\rD9-12@0\rG\r# park laser palyer10.5.1.14 9903 :rj\rshell msleep 500shell killall actorCONFIG

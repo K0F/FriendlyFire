@@ -1,0 +1,1 @@
+opto_init.shoptoFE0_on.sh &optoFE1_on.sh &optoFE2_on.sh &optoFE3_on.sh &optoFE4_on.sh &optoFE5_on.sh &optoFE6_on.sh &optoFE7_on.sh &optoFE0_off.sh &optoFE1_off.sh &optoFE2_off.sh &optoFE3_off.sh &optoFE4_off.sh &optoFE5_off.sh &optoFE6_off.sh &optoFE7_off.sh &scribe_pageturn5_midi51.sh &

@@ -1,0 +1,1 @@
+opto_init.shoptoFC0_on.sh &optoFC1_on.sh &optoFC2_on.sh &optoFC3_on.sh &optoFC4_on.sh &optoFC5_on.sh &optoFC6_on.sh &optoFC7_on.sh &optoFC8_on.sh &optoFC9_on.sh &optoFC10_on.sh &optoFC11_on.sh &optoFC12_on.sh &optoFC13_on.sh &optoFC14_on.sh &optoFC15_on.sh &

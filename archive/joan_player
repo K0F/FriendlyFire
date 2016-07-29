@@ -1,0 +1,58 @@
+#!/bin/bash
+actor1 -d0 -n player1 -h 192.168.2.12 -p 9850 << CONFIG
+midi
+	note_low 34
+	note_high 4e
+	vel_low 0
+	vel_high 7f
+   end
+
+if %player -eq 1
+	{
+	if %sequence -eq 1
+		{
+		192.168.2.10 9905 :43406 se\r 34-36 44017
+		}
+	
+	if %sequence -eq 2
+		{
+		192.168.2.10 9905 :18390 se\r 37-39 20240
+		}
+		
+	if %sequence -eq 3
+		{
+		192.168.2.10 9905 :40098 se\r 3a-3c 40157
+	 	}
+	 	
+	if %sequence -eq 4
+		{
+	 	192.168.2.10 9905 :18033 se\r 3d-3f 18381
+		}
+
+	if %sequence -eq 5
+		{
+		192.168.2.10 9905 :43401 se\r 40-42 43343
+		}
+		
+	if %sequence -eq 6
+		{
+		192.168.2.10 9905 :40800 se\r 43-45 41068
+		}
+		
+	if %sequence -eq 7
+		{
+		192.168.2.10 9905 :41743 se\r 46-48 42156
+		}
+
+	if %sequence -eq 8
+		{
+		192.168.2.10 9905 :46206 se\r 49-4b 46289
+		}
+
+	if %sequence -eq 5
+		{
+		192.168.2.10 9905 :46290 se\r 4c-4e 46349
+		}
+	}
+	 
+CONFIG

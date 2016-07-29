@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n opto_midi -h 10.5.1.9 -p 9850 << CONFIG10.5.1.9 9900 midi   note_on   midi_channel 15    low   0x01    hi    0x01   low_velocity   0x00   hi_velocity    0x00    end10.5.1.9 9900 :FEL08#shell cat /var/run/actor.opto_midi.pid | xargs killCONFIG

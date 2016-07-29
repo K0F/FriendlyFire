@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n stealth_60sp -h 10.5.1.12 -p 9850 << CONFIG10.5.1.12 9800 midi   note_on   midi_channel 1   low   0x3d   hi    0x3d   low_velocity   0x00   hi_velocity    0x7f   end10.5.1.17 9901 :60 sp\rCONFIG

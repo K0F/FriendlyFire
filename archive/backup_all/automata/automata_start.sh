@@ -1,0 +1,1 @@
+#!/bin/sh/bin/echo -n "\337" >/dev/lp1cd /actors/actors/video_pl.shsleep 10/actors/automata_check_running.sh &/actors/automata_midi.sh &sleep 5/actors/automata_init.sh &

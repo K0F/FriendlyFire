@@ -1,0 +1,57 @@
+Bruce:
+
+Here are some notes related to the OPTODD that randy wrote.
+
+First, we spent quite a bit of time debugging the driver's problems in the checksum
+calculation.  It should be OK now, but if you ever get a response of -1 2 0 then 
+that indicates that the optodd put out a command that had a bad checksum.
+
+To start the optodd, use a command line like:
+optodd -debug 1 -port 9800 -sdev cua1 -baud 9600
+
+Where it is sort of obvious what you need to change to modify settings.  
+
+The opto hardware is set for 9600 baud.  Yes, we can change it, but lets stay 
+here for now.  I am leaving the opto test board that I racked up.  Opto is rs-422
+and so you need to interface thru the AC-7A or some similar convertor.  When the
+computer is connected and talking to the opto unit, the RTS led on the AC-7A
+should be lit.
+Use a straight (not null modem) DB-25 cable between the computer and the optoboard.
+On the board, the Digital (B1 board) is addr FE, and the analog board is FD.
+
+Send the optodd commands as specified in the optomux manual.  You do not need to 
+pre-pend the > character or post fix the checksum, the driver will do that for you.
+The command letters are case sensitive, so be careful.
+
+You must pre-configure the otpo board for the direction of the position before 
+trying to turn things on and off.  For example, here are a few sample commands 
+for the digital board:
+
+FEA	#reset power-up clear
+
+FEG7F #set positions 0 - 6 as outputs, 7 as an input
+
+FEK01 #activate output 1
+
+FEL01 # de-activate output 1
+
+FDL01 # return value 01
+
+I have not tried using an actor to write, but it should work.
+
+Optodd returns:
+
+As of right now, a return of 0 0 0 is good, no error.
+If the first number is a -1, that seems to be an opto error, where the second
+number is the error from the optomux N0x return.
+If the first number is a -7, that seems to be a timeout, like you tried to talk
+to a board that was not there.
+Commands that return a number and are successful, return a 16 bit number in the
+second position ( a 0 in the first) but he number is in decimal, so you have to
+hex convert.  Sorry bout that.  Maybe get Randy to change that, although it will
+go away once we convert to midi anyway.
+
+
+Good luck.
+
+R.

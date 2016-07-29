@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n picdd_rpos_all -h 10.5.1.10 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.10 9700 :rpos 07 010.5.1.10 9700 :rpos 06 010.5.1.10 9700 :rpos 05 010.5.1.10 9700 :rpos 04 010.5.1.10 9700 :rpos 03 010.5.1.10 9700 :rpos 02 010.5.1.10 9700 :rpos 01 0CONFIG

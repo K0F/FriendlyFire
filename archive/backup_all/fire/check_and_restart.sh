@@ -1,0 +1,1 @@
+#!/bin/bash#pad_node="1 2 3 4 5"while [ 1 ] ; do  for i in $pad_node ; do    if [ ! -f /var/run/actor.pad$i.pid ] ; then      touch /var/run/actor.pad$i.pid    fi    kill -0 `cat /var/run/actor.pad$i.pid` > /dev/null 2>&1    if [ ! $? -eq 0 ] ; then      /actors/pad$i.sh &      echo $! > /var/run/actor.pad$i.pid     fi  done  sleep 180done

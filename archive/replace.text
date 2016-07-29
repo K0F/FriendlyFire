@@ -1,0 +1,1 @@
+#!/bin/sh# Search and replace text in files names matching below.for file in *.shdoecho "File original -  $file"cat $file#First pattern is find and second replacesed 's/10.5.1/198.168.2/g' $file > tempcp temp $fileecho "File replacement"cat $fileecho ""done

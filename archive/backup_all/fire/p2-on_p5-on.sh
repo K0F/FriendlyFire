@@ -1,0 +1,1 @@
+#!/bin/sh# 6 is on all the timeactor -d0 -n p2_on_p5_on -h 10.5.1.15 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   endshell /bin/echo -n "\233" >/dev/lp2      CONFIG

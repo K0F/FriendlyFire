@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n stealth_jog -h 10.5.1.12 -p 9850 << CONFIG10.5.1.12 9800 midi   note_on   midi_channel 1    low   0x00   hi    0x7f   low_velocity   0x00   hi_velocity    0x7f    endif %mnote -gt 99	{	10.5.1.17 9900 :ax jg100	}	if %mnote -lt 100	{	10.5.1.17 9900 :ax jg-100	}CONFIG

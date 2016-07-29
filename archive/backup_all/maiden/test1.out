@@ -1,0 +1,15 @@
+Connection to type 0 input on 192.168.2.3:9800
+Midi note low = 20
+Midi note hi = 70
+Midi velocity low = 1
+Midi velocity hi = 7f
+Note ON, Midi channel 0.
+Stored the commands:
+cmdkey 1 retrieved data shell echo comment 1
+ifkey 2 retrieved data [ %var1 -eq 1 ] 
+cmdkey 2 retrieved data shell echo var1 is 1
+ifkey 3 retrieved data [ %mnote -eq 42 ] 
+cmdkey 3 retrieved data shell echo note 2a
+ifkey 4 retrieved data [ %mnote -eq 42 -a %var2 -eq 2 ] 
+cmdkey 4 retrieved data 192.168.2.10 9700 : nop 03
+cmdkey 5 retrieved data set var2 0

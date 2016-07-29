@@ -1,0 +1,576 @@
+
+ Starting up the stest device driver, version 1.0, 1/2/98, id=215...
+Verbose Debugging on, Opening serial device /dev/cua1, Using TCP/IP port 9800 
+
+Added client on fd 5
+Ignored byte c9
+Ignored byte 1
+Ignored byte b9
+Ignored byte 7
+Ignored byte 75
+Ignored byte b9
+Ignored byte a
+Ignored byte 7f
+Ignored byte c9
+Ignored byte 1
+Ignored byte b9
+Ignored byte 7
+Ignored byte 75
+Ignored byte b9
+Ignored byte a
+Ignored byte 7f
+Ignored byte c9
+Ignored byte 1
+Ignored byte b9
+Ignored byte 7
+Ignored byte 75
+Ignored byte b9
+Ignored byte a
+Ignored byte 7f
+midi command of 3 bytes:99 2a 3d
+Ignored byte c0
+Ignored byte 20
+Ignored byte b0
+Ignored byte 7
+Ignored byte 75
+Ignored byte b0
+Ignored byte a
+Ignored byte 7f
+Ignored byte c1
+Ignored byte 2
+Ignored byte b1
+Ignored byte 7
+Ignored byte 7f
+Ignored byte b1
+Ignored byte a
+Ignored byte 72
+Ignored byte c3
+Ignored byte 42
+Ignored byte b3
+Ignored byte 7
+Ignored byte 77
+Ignored byte b3
+Ignored byte a
+Ignored byte 0
+Ignored byte c2
+Ignored byte 38
+Ignored byte b2
+Ignored byte 7
+Ignored byte 75
+Ignored byte b2
+Ignored byte a
+Ignored byte e
+Ignored byte c5
+Ignored byte 42
+Ignored byte b5
+Ignored byte 7
+Ignored byte 75
+Ignored byte b5
+Ignored byte a
+Ignored byte 7f
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 4d
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 24 59
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 24 5b
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 26 7f
+midi command of 3 bytes:80 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 24 59
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 1a 7f
+midi command of 3 bytes:80 1a 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:90 26 7f
+midi command of 3 bytes:80 26 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 2b 7f
+midi command of 3 bytes:93 32 55
+midi command of 3 bytes:92 3e 55
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 69
+midi command of 3 bytes:91 3a 62
+midi command of 3 bytes:91 3e 68
+midi command of 3 bytes:91 39 6f
+midi command of 3 bytes:91 35 60
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 2b 7f
+midi command of 3 bytes:81 39 40
+midi command of 3 bytes:81 3e 40
+midi command of 3 bytes:81 35 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:81 3a 40
+midi command of 3 bytes:99 24 48
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:93 37 66
+midi command of 3 bytes:92 43 66
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:90 2d 7f
+midi command of 3 bytes:83 32 40
+midi command of 3 bytes:82 3e 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 51
+midi command of 3 bytes:91 3c 75
+midi command of 3 bytes:91 3b 78
+midi command of 3 bytes:91 40 6f
+midi command of 3 bytes:91 37 6d
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:80 2d 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:90 2d 61
+midi command of 3 bytes:80 2d 40
+midi command of 3 bytes:99 26 6d
+midi command of 3 bytes:90 2b 7f
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:81 40 40
+midi command of 3 bytes:99 24 33
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:81 37 40
+midi command of 3 bytes:83 37 40
+midi command of 3 bytes:93 39 62
+midi command of 3 bytes:82 43 40
+midi command of 3 bytes:92 45 62
+midi command of 3 bytes:90 2a 7f
+midi command of 3 bytes:81 3b 40
+midi command of 3 bytes:81 3c 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:91 3c 6d
+midi command of 3 bytes:91 39 78
+midi command of 3 bytes:91 36 6b
+midi command of 3 bytes:91 3f 75
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 2a 7f
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2a 40
+midi command of 3 bytes:81 3c 40
+midi command of 3 bytes:99 24 4e
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:81 39 40
+midi command of 3 bytes:83 39 40
+midi command of 3 bytes:93 32 64
+midi command of 3 bytes:82 45 40
+midi command of 3 bytes:92 3e 64
+midi command of 3 bytes:90 2b 63
+midi command of 3 bytes:81 36 40
+midi command of 3 bytes:81 3f 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:91 3e 6b
+midi command of 3 bytes:91 37 66
+midi command of 3 bytes:91 3a 5c
+midi command of 3 bytes:91 35 56
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:99 26 52
+midi command of 3 bytes:90 29 7f
+midi command of 3 bytes:80 29 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:81 37 40
+midi command of 3 bytes:81 35 40
+midi command of 3 bytes:99 24 57
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:83 32 40
+midi command of 3 bytes:93 3a 6e
+midi command of 3 bytes:82 3e 40
+midi command of 3 bytes:92 46 6e
+midi command of 3 bytes:90 2e 7f
+midi command of 3 bytes:81 3e 40
+midi command of 3 bytes:81 3a 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:91 41 71
+midi command of 3 bytes:91 38 75
+midi command of 3 bytes:91 3d 6b
+midi command of 3 bytes:83 3a 40
+midi command of 3 bytes:93 3a 57
+midi command of 3 bytes:82 46 40
+midi command of 3 bytes:92 46 57
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:83 3a 40
+midi command of 3 bytes:82 46 40
+midi command of 3 bytes:93 3a 62
+midi command of 3 bytes:92 46 62
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:83 3a 40
+midi command of 3 bytes:82 46 40
+midi command of 3 bytes:80 2e 40
+midi command of 3 bytes:99 26 58
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 2e 7f
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2e 40
+midi command of 3 bytes:99 24 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 27 7f
+midi command of 3 bytes:93 3c 6b
+midi command of 3 bytes:92 48 6b
+midi command of 3 bytes:81 41 40
+midi command of 3 bytes:81 38 40
+midi command of 3 bytes:81 3d 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 5a
+midi command of 3 bytes:83 3c 40
+midi command of 3 bytes:82 48 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:91 41 6b
+midi command of 3 bytes:91 3d 6d
+midi command of 3 bytes:91 37 6b
+midi command of 3 bytes:99 26 7d
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:93 3a 66
+midi command of 3 bytes:92 46 66
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 27 40
+midi command of 3 bytes:83 3a 40
+midi command of 3 bytes:82 46 40
+midi command of 3 bytes:99 24 55
+midi command of 3 bytes:93 39 53
+midi command of 3 bytes:92 45 53
+midi command of 3 bytes:90 2e 7f
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:80 2e 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:81 3d 40
+midi command of 3 bytes:83 39 40
+midi command of 3 bytes:82 45 40
+midi command of 3 bytes:90 2d 7f
+midi command of 3 bytes:81 37 40
+midi command of 3 bytes:81 41 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:91 3c 68
+midi command of 3 bytes:91 3f 66
+midi command of 3 bytes:91 37 66
+midi command of 3 bytes:91 39 68
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2d 40
+midi command of 3 bytes:99 26 6f
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 2d 7f
+midi command of 3 bytes:81 37 40
+midi command of 3 bytes:81 3f 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2d 40
+midi command of 3 bytes:81 3c 40
+midi command of 3 bytes:81 39 40
+midi command of 3 bytes:99 24 52
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 32 7f
+midi command of 3 bytes:80 32 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 78
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:91 3e 7f
+midi command of 3 bytes:91 41 7f
+midi command of 3 bytes:91 36 7f
+midi command of 3 bytes:91 3c 7f
+midi command of 3 bytes:90 26 7f
+midi command of 2 bytes:d1 50 0
+midi command of 2 bytes:d1 37 0
+midi command of 2 bytes:d1 0 0
+midi command of 2 bytes:d0 4 0
+midi command of 2 bytes:d0 1e 0
+midi command of 2 bytes:d0 3 0
+midi command of 3 bytes:81 36 40
+midi command of 2 bytes:d0 0 0
+midi command of 3 bytes:81 41 40
+midi command of 3 bytes:81 3c 40
+midi command of 3 bytes:81 3e 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 26 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 50
+midi command of 3 bytes:93 35 57
+midi command of 3 bytes:92 41 57
+midi command of 3 bytes:90 26 7f
+midi command of 3 bytes:80 26 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:99 24 59
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:83 35 40
+midi command of 3 bytes:82 41 40
+midi command of 3 bytes:90 2b 7f
+midi command of 3 bytes:93 37 73
+midi command of 3 bytes:92 43 73
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:91 3e 6d
+midi command of 3 bytes:91 3a 60
+midi command of 3 bytes:91 39 6f
+midi command of 3 bytes:91 35 62
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:99 26 6f
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 2b 7f
+midi command of 3 bytes:81 39 40
+midi command of 3 bytes:81 35 40
+midi command of 3 bytes:81 3e 40
+midi command of 3 bytes:81 3a 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:99 24 3b
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:93 39 76
+midi command of 3 bytes:92 45 76
+midi command of 3 bytes:90 2d 7f
+midi command of 3 bytes:83 37 40
+midi command of 3 bytes:82 43 40
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 53
+midi command of 3 bytes:91 40 6b
+midi command of 3 bytes:91 3c 68
+midi command of 3 bytes:91 3b 60
+midi command of 3 bytes:91 37 66
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:80 2d 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:90 2d 74
+midi command of 3 bytes:80 2d 40
+midi command of 3 bytes:99 26 48
+midi command of 3 bytes:90 2b 7f
+midi command of 3 bytes:81 40 40
+midi command of 3 bytes:81 3c 40
+midi command of 3 bytes:81 3b 40
+midi command of 3 bytes:81 37 40
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:99 24 57
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:83 39 40
+midi command of 3 bytes:93 3c 69
+midi command of 3 bytes:82 45 40
+midi command of 3 bytes:92 48 69
+midi command of 3 bytes:90 2a 7f
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:91 36 64
+midi command of 3 bytes:91 39 71
+midi command of 3 bytes:91 3c 6d
+midi command of 3 bytes:91 3f 6d
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2a 40
+midi command of 3 bytes:99 26 7d
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:90 2a 7f
+midi command of 3 bytes:80 2a 40
+midi command of 3 bytes:81 3c 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:81 39 40
+midi command of 3 bytes:99 24 46
+Ignored byte b9
+Ignored byte 32
+Ignored byte 7e
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:83 3c 40
+midi command of 3 bytes:82 48 40
+midi command of 3 bytes:90 2b 7f
+midi command of 3 bytes:81 36 40
+midi command of 3 bytes:81 3f 40
+midi command of 3 bytes:93 3a 5e
+midi command of 3 bytes:92 46 5e
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 56
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:91 3a 54
+midi command of 3 bytes:91 3e 58
+midi command of 3 bytes:91 37 60
+midi command of 3 bytes:91 35 56
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:99 26 7f
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2b 40
+midi command of 3 bytes:99 26 43
+midi command of 3 bytes:83 3a 40
+midi command of 3 bytes:93 3a 57
+midi command of 3 bytes:82 46 40
+midi command of 3 bytes:92 46 57
+midi command of 3 bytes:90 29 7f
+midi command of 3 bytes:81 37 40
+midi command of 3 bytes:80 29 40
+midi command of 3 bytes:81 35 40
+midi command of 3 bytes:89 26 40
+midi command of 3 bytes:81 3e 40
+midi command of 3 bytes:81 3a 40
+midi command of 3 bytes:99 24 57
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:83 3a 40
+midi command of 3 bytes:93 3d 76
+midi command of 3 bytes:82 46 40
+midi command of 3 bytes:92 49 76
+midi command of 3 bytes:90 2e 7f
+midi command of 3 bytes:89 24 40
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:83 3d 40
+midi command of 3 bytes:82 49 40
+midi command of 3 bytes:91 41 7a
+midi command of 3 bytes:91 3d 73
+midi command of 3 bytes:91 38 78
+midi command of 3 bytes:93 3c 57
+midi command of 3 bytes:92 48 57
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:83 3c 40
+midi command of 3 bytes:93 3d 77
+midi command of 3 bytes:82 48 40
+midi command of 3 bytes:92 49 77
+midi command of 2 bytes:d3 4 0
+midi command of 2 bytes:d2 4 0
+midi command of 2 bytes:d3 0 0
+midi command of 2 bytes:d2 0 0
+midi command of 3 bytes:89 2a 40
+midi command of 3 bytes:80 2e 40
+midi command of 3 bytes:99 26 78
+midi command of 3 bytes:99 2a 3d
+midi command of 3 bytes:93 3c 4e
+midi command of 3 bytes:92 48 4e
+midi command of 3 bytes:90 2e 7f
+midi command of 3 bytes:83 3d 40
+midi command of 3 bytes:82 49 40
+midi command of 3 bytes:80 2e 40
+midi command of 3 bytes:81 3d 40
+Ignored byte b0
+Ignored byte 40
+Ignored byte 0
+Ignored byte b1
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:81 38 7f
+midi command of 3 bytes:81 41 7f
+Ignored byte b2
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:82 48 7f
+Ignored byte b3
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:83 3c 7f
+Ignored byte b4
+Ignored byte 40
+Ignored byte 0
+Ignored byte b5
+Ignored byte 40
+Ignored byte 0
+Ignored byte b6
+Ignored byte 40
+Ignored byte 0
+Ignored byte b7
+Ignored byte 40
+Ignored byte 0
+Ignored byte b8
+Ignored byte 40
+Ignored byte 0
+Ignored byte b9
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:89 26 7f
+midi command of 3 bytes:89 2a 7f
+Ignored byte ba
+Ignored byte 40
+Ignored byte 0
+Ignored byte bb
+Ignored byte 40
+Ignored byte 0
+Ignored byte bc
+Ignored byte 40
+Ignored byte 0
+Ignored byte bd
+Ignored byte 40
+Ignored byte 0
+Ignored byte be
+Ignored byte 40
+Ignored byte 0
+Ignored byte bf
+Ignored byte 40
+Ignored byte 0
+Ignored byte b0
+Ignored byte 40
+Ignored byte 0
+Ignored byte b1
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:81 38 7f
+midi command of 3 bytes:81 41 7f
+Ignored byte b2
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:82 48 7f
+Ignored byte b3
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:83 3c 7f
+Ignored byte b4
+Ignored byte 40
+Ignored byte 0
+Ignored byte b5
+Ignored byte 40
+Ignored byte 0
+Ignored byte b6
+Ignored byte 40
+Ignored byte 0
+Ignored byte b7
+Ignored byte 40
+Ignored byte 0
+Ignored byte b8
+Ignored byte 40
+Ignored byte 0
+Ignored byte b9
+Ignored byte 40
+Ignored byte 0
+midi command of 3 bytes:89 26 7f
+midi command of 3 bytes:89 2a 7f
+Ignored byte ba
+Ignored byte 40
+Ignored byte 0
+Ignored byte bb
+Igno

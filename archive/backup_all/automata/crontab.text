@@ -1,0 +1,1 @@
+# unicom crontab# MIN HOUR DAY MONTH DAYOFWEEK COMMAND# start up tue thru sun30 9 * * tue-sun /actors/automata_start.sh>>/dev/null# end time30 18 * * tue-thu /actors/automata_stop.sh>>/dev/null30 21 * * fri /actors/automata_stop.sh>>/dev/null30 18 * * sat-sun /actors/automata_stop.sh>>/dev/null   

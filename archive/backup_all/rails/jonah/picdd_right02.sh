@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n picdd_right02 -h 10.5.1.3 -p 9850 << CONFIG10.5.1.3 9700 midi   note_on   midi_channel 2    low   0x6d   hi    0x6e   low_velocity   0x00    hi_velocity    0x7f    end	10.5.1.3 9700 :stop 02			shell msleep 300		10.5.1.3 9700 :pos 02 20000	10.5.1.3 9700 :gtraj 02CONFIG

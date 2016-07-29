@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n scribe -h 10.5.1.9 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 2   end10.5.1.9 9800 :FEL02shell sleep 210.5.1.9 9800 :FEL01shell sleep 1010.5.1.9 9800 :FEL04shell sleep 510.5.1.9 9800 :FEK04shell sleep 510.5.1.9 9800 :FEK02shell sleep 210.5.1.9 9800 :FEK01shell sleep 12CONFIG

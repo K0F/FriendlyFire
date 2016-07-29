@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n fan -h 10.5.1.9 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 5   end10.5.1.9 9800 :FCK10shell sleep 1510.5.1.9 9800 :FCL10shell sleep 10CONFIG

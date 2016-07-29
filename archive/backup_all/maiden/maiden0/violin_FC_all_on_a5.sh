@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n violin_FC_all_on_a5 -h 10.5.1.14 -p 9850 << CONFIG10.5.1.15 9800 midi   note_on   midi_channel 3    low   0x50    hi    0x51    low_velocity   0x01   hi_velocity    0x70    end10.5.1.15 9900 :FCK1FFFCONFIG

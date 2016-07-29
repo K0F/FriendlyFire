@@ -1,0 +1,1 @@
+#!/bin/bashactor -d0 -n automata_ping -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 1   iterations 0   end#shell randsleep 1200# read the analog input10.5.1.14 9900 :FDL0001CONFIG

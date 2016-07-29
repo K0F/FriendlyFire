@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n stealth_restart -h 10.5.1.12 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   endshell /actors/stealth_stop.sh &shell sleep 60shell (exec mididd -d0 9800 cua3 &)shell sleep 1shell /actors/stealth_start.sh &CONFIG

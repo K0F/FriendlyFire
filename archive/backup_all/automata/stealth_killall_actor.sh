@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n stealth_killall_actor -h 10.5.1.12 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.17 9900 :aa stshell killall actorCONFIG

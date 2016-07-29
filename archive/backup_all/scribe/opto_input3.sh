@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n opto_input3 -h 10.5.1.14 -p 9850 << CONFIG10.5.1.14 9900 midi   note_on   midi_channel 15    low   0x12    hi    0x12   low_velocity   0x00   hi_velocity    0x7f    endshell echo midi is %mvelCONFIG

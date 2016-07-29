@@ -1,0 +1,1 @@
+#!/bin/shpicdd_rail08_midi.sh &picdd_rail_sensor1_midi.sh &picdd_sensor1.sh &picdd_rail01_midi.sh &picdd_rail_sensor2_midi.sh &picdd_sensor2.sh &picdd_rail04_midi.sh &picdd_rail_sensor3_midi.sh &picdd_sensor3.sh &

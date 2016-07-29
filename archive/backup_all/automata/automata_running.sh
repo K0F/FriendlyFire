@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n automata_running -h 10.5.1.12 -p 9850 << CONFIG10.5.1.12 9901 midi   note_on   midi_channel 0    low   0x7f   hi    0x7f   low_velocity   0x00   hi_velocity    0x7f    endif %mnote -eq 127	set running 1	CONFIG

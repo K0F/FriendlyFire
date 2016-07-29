@@ -1,0 +1,1 @@
+#!/bin/bash# headrest, breast rise, foot str, leg decline (0)(1)(10)(11) onactor -d1 -n violin_m4_g+5 -h 10.5.1.9 -p 9850 << CONFIG10.5.1.9 9800 midi   note_on   midi_channel 3    low   0x50   hi    0x50    low_velocity   0x01   hi_velocity    0x70    end10.5.1.9 9900 :FCKC03CONFIG

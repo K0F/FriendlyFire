@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n opto_input3_test -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 0   end10.5.1.14 9900 :FDL4shell msleep 300CONFIG

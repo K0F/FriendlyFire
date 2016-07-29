@@ -1,0 +1,1 @@
+#!/bin/shkillall actorsleep 2picdd_reset01_home1.sh &sleep 2picdd_reset02_home1.sh &sleep 2picdd_reset03_home1.sh &sleep 2picdd_reset04_home1.sh &sleep 2picdd_reset05_home1.sh &sleep 2picdd_reset06_home1.sh &sleep 2picdd_reset07_home1.sh &sleep 2picdd_reset08_home1.sh &

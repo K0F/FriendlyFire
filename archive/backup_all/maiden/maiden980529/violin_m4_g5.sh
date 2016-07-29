@@ -1,0 +1,1 @@
+#!/bin/bash# breast situp, breast rise, knee drop, pelvic roll(1)(2)(3)(4)(5)(6)(7)(9) onactor -d1 -n violin_m4_g5 -h 10.5.1.9 -p 9850 << CONFIG10.5.1.14 9800 midi   note_on   midi_channel 3    low   0x4f    hi    0x4f    low_velocity   0x01   hi_velocity    0x70    end10.5.1.14 9900 :FCK2FECONFIG

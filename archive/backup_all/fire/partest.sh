@@ -1,0 +1,1 @@
+#!/bin/bashactor -d0 -n partest -h 10.5.1.15 -p 9900 << CONFIGlocalhost 0 immediate   init_delay 10   loop_delay 5   iterations 5   end# this is a commentshell /bin/echo -n "\377" >/dev/lp2shell sleep 10shell /bin/echo -n "\000" >/dev/lp2CONFIG

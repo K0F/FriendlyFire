@@ -1,0 +1,1 @@
+Match on midi in 90 7f 0 sending socket: aa ac200,200,200; sending socket: aa mt-4000,0,0; gd id sending socket: mn 90 7f 01 Match on midi in 90 7f 1 sending system: /bin/echo -n "\136" >/dev/lp1 Unable to connect to output on 10.5.1.12:9901 sending socket:  19369 se pl\r   sending socket: \0218 north\r sending socket: mn 90 7f 02 

@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n picdd_reset07_stat -h 10.5.1.10 -p 9850 << CONFIG10.5.1.10 9700 midi   note_on   midi_channel 7    low   0x01   hi    0x7f   low_velocity   0x00    hi_velocity    0x7f    endset location07 %mnoteCONFIG

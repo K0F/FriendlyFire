@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n violin_FC1_off_a3 -h 192.168.2.14 -p 9850 << CONFIG192.168.2.15 9800 midi   note_on   midi_channel 1    low   0x39    hi    0x39    low_velocity   0x01   hi_velocity    0x70    end192.168.2.15 9900 :FCL02CONFIG

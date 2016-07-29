@@ -1,0 +1,1 @@
+#!/bin/bash##while truedo	ps -acx | grep 'mididd' > /actors/stealth_midi.status	if test -s /actors/stealth_midi.status	then		sleep 5	else 		/actors/stealth_restart.sh &		sleep 65		date >> /actors/stealth_midi_restart.log		ps -acx | grep 'mididd' >> /actors/stealth_midi_restart.logfidone

@@ -1,0 +1,1 @@
+ps -ax#!/bin/bash# laser plays on any noteactor -d1 -n fuji_maiden_switch -h 10.5.1.9 -p 9850 << CONFIG10.5.1.9 9800 midi   note_on   midi_channel 0    low   0x01    hi    0x7f    low_velocity   0x01   hi_velocity    0x7f    endif %time -eq 0	{	10.5.1.9 9902 : Axbx\r	}set time 1set activity 1	CONFIG

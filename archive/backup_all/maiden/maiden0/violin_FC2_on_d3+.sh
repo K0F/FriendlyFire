@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n violin_FC2_on_d3+ -h 10.5.1.14 -p 9850 << CONFIG10.5.1.15 9800 midi   note_on   midi_channel 0    low   0x33    hi    0x33    low_velocity   0x01   hi_velocity    0x70    end10.5.1.15 9900 :FCK04CONFIG

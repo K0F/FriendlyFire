@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n light -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 0   end10.5.1.3 9900 :up\rshell msleep 20010.5.1.3 9900 :left\rshell msleep 20010.5.1.3 9900 :down\rshell msleep 20010.5.1.3 9900 :right\rshell msleep 200CONFIG

@@ -1,0 +1,1 @@
+#!/bin/shactor -d0 -n picdd_kp_7000_0205 -h 10.5.1.3 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 1   end10.5.1.3 9700 :kp 02 700010.5.1.3 9700 :gain 0210.5.1.3 9700 :kp 05 700010.5.1.3 9700 :gain 0510.5.1.3 9700 :kp 130 700010.5.1.3 9700 :gain 130CONFIG

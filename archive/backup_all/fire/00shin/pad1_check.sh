@@ -1,0 +1,1 @@
+#!/bin/bash##while truedo        ps a | grep 'actor -d0 -n pad1 -h 10.5.1.15 -p 9850' > /actors/pad1.status        	if test -s /actors/pad1.status        then                exit        else                 (/actors/pad1.sh &)                date >> /pad1.crash                ps a | grep 'actor -d0 -n pad1 -h 10.5.1.15 -p 9850' >> /actors/pad1.crashfidone

@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n pad1 -h 10.5.1.15 -p 9850 << CONFIG10.5.1.15 9800 midi   note_on   midi_channel 9    low   0x23   hi    0x31   low_velocity   0x01    hi_velocity    0x7f    endset video_mode 1     CONFIG

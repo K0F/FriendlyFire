@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n picdd_07_loop -h 10.5.1.10 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 0   endshell msleep 3500   10.5.1.10 9700 :pos 07 -14000   10.5.1.10 9700 :gtraj 07shell msleep 3500   10.5.1.10 9700 :pos 07 13000   10.5.1.10 9700 :gtraj 07      CONFIG

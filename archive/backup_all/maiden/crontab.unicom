@@ -1,0 +1,1 @@
+# unicom crontab# MIN HOUR DAY MONTH DAYOFWEEK COMMAND# start up tue thru sun55 9 * * tue-sun /actors/pitch/maiden_start.sh>>/dev/null# end time05 18 20 jul * /actors/pitch/maiden_stop.sh>>/dev/null05 18 * * tue-thu /actors/pitch/maiden_stop.sh>>/dev/null05 21 * * fri /actors/pitch/maiden_stop.sh>>/dev/null05 18 * * sat-sun /actors/pitch/maiden_stop.sh>>/dev/null   

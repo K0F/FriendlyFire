@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n scribe_pageturn5_midi51 -h 10.5.1.14 -p 9850 << CONFIG10.5.1.14 9800 midi   note_on   midi_channel 15    low   0x51   hi    0x51   low_velocity   0x01   hi_velocity    0x7f    endshell scribe_pageturn_startloop.sh &CONFIG

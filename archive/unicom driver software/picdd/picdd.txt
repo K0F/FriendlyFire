@@ -1,0 +1,126 @@
+
+   File: PICDD.C              Version 1.0                 Date: 12/18/97   
+
+      This is the device driver  for the PICservo system
+      	Modified to use INET socket calls
+	This is a SERVER
+
+      Intended for use with the following:
+      		unix (linux) machine with picservo on a /dev/cuax port
+		
+
+      The revision history is shown below:
+
+            Rev 1.0 12/18/97  Initial version
+
+
+   calling format:
+   	picdd [-d0 | -d1] <port_number> <serial_device> 
+	-d0 = no debugging (very few output messages)
+	-d1 = debugging, frequent output messages
+	<port_number> = INET service port (like 9700, etc)
+	<serial_device> = serial cuax port (like cua0)
+
+
+   outputs information to stdout, errors to stderr.
+   supports up to 16 devices (including addr 0)
+   short (normal) status described in PSDATA document page 20
+   long status described in PSDATA document page 13
+
+Single Word Commands (not pic commands):
+
+linger
+	Cause the device driver to not close socket connection - use 
+	with a telnet or telnet-like client that needs persistent connections.
+
+close
+	Cause the device driver to resume normal operations, closing
+	socket after each command.  This is the default.
+	
+
+Pic Commands:
+Note: all these commands are in the form <command> <addr> <optional...>
+ where <addr> is the address of the controller.
+
+nop <addr>
+	Execute a nop, returns defined status
+	
+reset <addr>
+	Reset the pic servo controller to defaults
+	
+sleep <addr>
+	Device driver sleeps for <addr> number of seconds.
+
+csb <addr>
+	Clear sticky bits (like position error)
+
+off <addr>
+	Turn motor drive off
+
+rpos <addr>
+	Sets encoder counted positon to 0
+
+init <addr>
+	Sets the following inital values:
+	pic[i].kp = 1000;
+	pic[i].kd = 30000;
+	pic[i].ki = 1000;
+	pic[i].il = 100000;
+	pic[i].ol = 255;
+	pic[i].cl = 0;
+	pic[i].el = 512;
+	pic[i].sr = 1;
+
+gain <addr>
+	Load the current values of the kp, kd, etc into the controller.
+	
+vmode <addr> <dir>
+	Enter the velocity mode, uses pro-loaded vel and accel, 
+	dir must be for or rev
+	
+enable <addr>
+	Enable the motor drive
+	
+addr <addr> <new_individual_addr> <new_group_addr>
+	Set address.
+	<new_individual_addr> - The new individual address to set
+	<new_group_addr> - The new group address to set
+	
+traj <addr>
+	Load the trajectory (velocity, accel, position) but do not go.
+	
+gtraj <addr>
+	Load the trajectory (velocity, accel, position) and start the move.
+
+go <addr>
+	Execute a move previously defined by loading the trajectory.
+
+stop <addr>
+	Stop a motors motion.
+
+stat <addr>
+	Return the full status.
+	
+pwm <addr> <dir> <vel>
+	Enter pwm mode 
+	(do not use)
+
+Configuration commands:
+vel <addr> <velocity>
+	Set velocity - long integer
+
+pos <addr> <position>
+	Set position - long integer
+
+accel <addr> <accelleration>
+	Set accelleration - long integer
+
+kp <addr> <constant>
+	Set position constant
+
+kd <addr> <constant>
+	Set derivative constant
+
+ki <addr> <constant>
+	Set integral constant
+

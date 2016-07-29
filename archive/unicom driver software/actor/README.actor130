@@ -1,0 +1,205 @@
+
+                               DRAFT - PRELIMINARY
+                        Release notes for Actor version 1.30
+                                    4/15/98
+                                   R. Gritzo
+
+   Note:  This only covers the parts of the actor that have changed significantly
+   in this release.  I will eventually finish the rest of the documentation. No,
+   really I will.  Trust me.  ;).
+
+Overview Version 1.3:
+Version 1.3 is a feature upgrade to the actor.  This version now supports evaluation
+of variables as part of the strings that are sent to the system as shell commands, and
+as part of the strings that are sent as host-port commands.  The process ID is now 
+available as an internal variable called %pid.
+
+This means that the user may now send a host-port command that looks like:
+	localhost.spodynet.com 6666 : ping %pval
+and the system will evaluate %pval using the logicdd device driver and database, and send
+the value of %pval instead of the string %pval.  Assuming %pval is currently 8, the above
+string will be translated to:
+	localhost.spodynet.com 6666 : ping 8
+
+The same functionality is provided in the commands that are sent to the shell. This offers 
+one 'hidden' advantage, in that the shell command can now be used to print diagnostic
+messages, so that the command:
+	shell echo pval is %pval 
+will actually be rendered as:
+	shell echo pval is 8, resulting in the message: pval is 8.
+You want the % to appear in only one place, for obvious reasons.
+
+The process ID is now available as an internal variable called %pid.  This allows the 
+actor to both refer to itself, and set a logicdd variable with it's pid.  This has the
+potential to be a powerful mechanism.  For instance, you could kill yourself by 
+including the shell command:
+	shell kill %pid
+
+If you set a variable by doing:
+	set actorname %pid
+then somebody else could kill you by executing
+	shell kill %actorname
+
+The mechanism to set a logic variable to the actor PID is a potentially very useful one, 
+and may be incorporated automatically in future releases of the actor, if a means of
+establishing a meaningful and unique variable name can be found.
+
+Overview Version 1.2:   
+Version 1.2 is a performance enhancement upgrade to the actor.  This version uses an 
+internal function to perform some of the test comparisons (i.e. the if statements), as 
+opposed to spawning a shell command.  The shell command was very useful and convienient, 
+but also very time consuming.
+
+At present the test evaluation only supports the following operators:
+	-eq  true if equality
+	-ne  true if not equal
+	-lt  true if less than
+	-le  true if less than or equal to
+	-gt  true if greater than
+	-ge  true if greater than or equal to
+
+So for example, 1 -lt 5 would be true.
+The code also supports joining of groups of tests with the following:	
+	-a   true if both sides are true
+	-o   true if either side is true
+	
+This is how multiple levels of if statements are evaluated.  
+
+Most of these changes should be transparent to the user, except for the loss of 
+functionality from the system test command.
+
+Overview Version 1.1:
+Version 1.1 is a fairly major upgrade to the actor functionality.
+In particular, the actor now supports limited mathematical operations as part of the
+set command.  In addition, the set command now supports setting a variable to
+another variable.  The actor now also performs hostname and service name lookup
+for all network addresses and port numbers.  In a help for actor management, the
+actor now creates a pid file containing the pid number of the running actor.
+
+
+   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+   NOTE:
+   The process of looking up host names and service numbers is 
+   inherently VERY time consuming.  This should only be used on a
+   regular basis for the logic and input specifications, and only
+   if the resultant delay in starting the actor is acceptable.
+   Using the name and service as part of normal output commands
+   should be avoided unless used as part of development.
+   !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+
+Logic device driver specification:
+In previous versions of the actor explicit specification of the logic device driver
+host name and port number was mandantory.  Starting with this release if the logicdd
+host and port number are not specified in the command line (with the -h <name> -p
+<number> options) then the logicdd will be assumed to be running on localhost, and the
+port number will attempt to be obtained from the /etc/services file.  Not
+specifying the logicdd port number by command line option AND not having the
+logicdd service entry is considered to be a fatal error, and the actor will
+terminate.  
+
+Either the host name or IP address may be specified.  If the host name
+is specified, then a lookup capability must exist (named or /etc/hosts) or the
+hostname will default to localhost.
+
+Either the port number or service name may be specified.  If the service name is
+specified, then the service must be listed in /etc/services, or a fatal error will
+result.
+
+The following command lines illustrate these options for logicdd:
+   actor1 -d1 -n eve -h 192.168.2.1 -p 9900   # normal ip addr port number 
+   actor1 -d1 -n eve -h david -p logicdd   # logicdd on host david, service logicdd
+   actor1 -d1 -n eve    # logicdd on localhost, service logicdd   
+   
+
+Input device driver specification:
+Starting with this release of the actor the input device may be specified as a host
+name (as opposed to an IP address) and a service name (as opposed to a port number).
+Unlike the logicdd lookup, no default host name is assumed.  Not specifying the 
+input device driver host name or number and service name or port number is 
+considered to be a fatal error, and the actor will terminate.  
+
+Either the host name or IP address may be specified.  If the host name
+is specified, then a lookup capability must exist (named or /etc/hosts) or the
+hostname will default to localhost.
+
+Either the port number or service name may be specified.  If the service name is
+specified, then the service must be listed in /etc/services, or a fatal error will
+result.
+
+The following lines from the input section illustrate these options:
+   david.vasulka.org mididd midi #midi actor, host david, device mididd
+   192.168.2.1 9800 midi #midi actor, ip addr for host david, port 9800
+   
+Output command device driver specification:
+Starting with this release of the actor the output device may be specified as a host
+name (as opposed to an IP address) and a service name (as opposed to a port number).
+Again, Unlike the logicdd lookup, no default host name is assumed.  Not specifying 
+the input device driver host name or number and service name or port number is 
+considered to be a fatal error, and the actor will terminate.  
+
+Either the host name or IP address may be specified.  If the host name
+is specified, then a lookup capability must exist (named or /etc/hosts) or the
+hostname will default to localhost.
+
+Either the port number or service name may be specified.  If the service name is
+specified, then the service must be listed in /etc/services, or a fatal error will
+result.
+
+The following lines from the output command section illustrate these options:
+   if %tvar -gt 1
+      david mididd :90 40 41  #output to mididd running on host david
+   192.168.2.1 9900 :90 40 40 #output to port 9900 running on host david
+   
+Actor Commands
+Starting with version 1.1 the actor supports limited mathematical expressions in
+the variable set command.  This is the only place this feature is supported (it is
+not supported in the if statements, for instance).  In general the set command is
+structured like:  set <variable> <value>, which sets the variable to the specified
+value.  
+
+<variable>:  In this case, the variable name does not need to be prefixed by the %
+indicator.  This is beceause the code knows that this is a variable value.  The
+internal variables (like midinote value) should not be used here.  This variable
+name is what is used as the index into logicdd's database, so care should be used
+to consider that all actors using the same logicdd have access to this variable.
+
+<value>:  This element can range from a simple numeric value to a variable
+expression.  It is evaluated (using logicdd if necessary) then used as the data
+passed to the logicdd for storage in the database.  Presently only the following
+operations are allowed: + (addition), - (subtraction), * (multiplication) and /
+(division).  
+
+The following examples serve to illustrate the options:
+set var1 3  - Sets the variable named var1 to the numeric value three.
+set var1 three - Sets the variable named var1 to the string value 'three'.  This
+   requires that the if test use the proper operator for the type of variable.
+set var1 %var1+1 - Adds one to the current value of var1, and makes the result the
+   new value of var1.  Note that var1 must carry it's % designator in the value
+   section, and that no whitespaces are allowed.  White spaces are not permitted in
+   the expression, and will cause errors.
+set var1 %var1/%var2 - Divides var1 by var2, making the result the new value of
+   var1. Any normal variable or internal variable may be used.
+
+   NOTE:  All math is performed as simple short integers, able to range in
+value from approximately -32,000 to +32,000.  Some scaling may be required to
+obtain sufficient resolution.  For example, dividing 5 by 2 gives 2, and dividing 2
+by 3 gives 0.
+
+
+PID file generation:
+Also starting with version 1.1, the actor generates a pid file.  This file is in
+the standard directory /var/run, and is named actor.<actorname>.pid, where the
+<actorname> is from the -n argument.  The only content of this file is the PID
+number of the actor from the getpid() call. This will allow automated scripts to 
+kill actors by being able to easily reference thier PIDs.
+
+
+Reference:
+
+The following internal variables are known to the actor:
+%mnote is the incoming midi note value in decimal.
+%mchan is the incoming midi command channel number (0 based) in decimal
+%mstat is the incoming midi status command (equivilant to the upper 4 bits of the
+   midi status command), but in decimal.
+%mvel is the velocity value of the incoming midi note, in decimal.
+%life is the life value of the actor.

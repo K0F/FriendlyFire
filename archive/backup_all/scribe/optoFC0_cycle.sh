@@ -1,0 +1,1 @@
+#!/bin/bashactor -d1 -n opto_FC0_cycle -h 10.5.1.14 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 0   iterations 10   end10.5.1.14 9900 :FCK01shell sleep 1010.5.1.14 9900 :FCL01shell sleep 10CONFIG

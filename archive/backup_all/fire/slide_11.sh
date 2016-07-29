@@ -1,0 +1,1 @@
+#!/bin/shactor -d1 -n slide_11 -h 10.5.1.15 -p 9850 << CONFIGlocalhost 0 immediate   init_delay 0   loop_delay 10   iterations 11   endshell /actors/p3-on_p4-on.shshell /actors/p4-on.sh      CONFIG
