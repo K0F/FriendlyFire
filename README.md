@@ -1,6 +1,6 @@
 # Friendly Fire
 
-![alt tag](https://raw.githubusercontent.com/username/projectname/branch/path/to/img.png)
+![alt tag](https://raw.githubusercontent.com/K0F/FriendlyFire/master/FF.png)
 
 
 This is a repository for table #3 _Friendly Fire_ from installation _The Brotherhood_ by Steina and Woody Vasulka. All available source code together with historical one and current technical documentation should gradually be placed here.
