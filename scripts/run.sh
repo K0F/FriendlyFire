@@ -7,8 +7,8 @@ echo "hello world" > ~/log.txt
 (/usr/bin/omxplayer --loop --no-osd -b -ohdmi video.mp4 < /home/pi/ctl)&
 (echo -n i > /home/pi/ctl)&
 
-bash /home/pi/serialOn.sh
-source /home/pi/master.sh
+bash /home/pi/FriendlyFire/scripts/serialOn.sh
+source /home/pi/FriendlyFire/scripts/master.sh
 
 (while true; do 
 	sleep 10
