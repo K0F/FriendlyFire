@@ -15,6 +15,8 @@ export DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-BouFPQKgqg,guid=64b483d7
 echo "hello world" >> /home/pi/log.txt
 
 (/usr/bin/omxplayer --loop --no-osd -b -olocal video.mp4)&
+(ssh -fN -R 9999:localhost:22 famuStrojGlobalKof -p5081)&
+(autossh -M 20000 -f -N famuStrojGlobalKof -R 9999:localhost:22 -C)&
 #(echo -n i > /home/pi/ctl)&
 
 bash /home/pi/serialOn.sh
@@ -24,10 +26,10 @@ cd /home/pi
 
 (while true; do 
 	sleep 10
-	midiOn
+	midiOff
 	sleep 1
-        (./dbuscontrol.sh pause)&
-        (./dbuscontrol.sh hidevideo)&
+        ./dbuscontrol.sh pause
+	./dbuscontrol.sh hidevideo
 	shieldsUp
 	carouselOn
 	sleep 10
@@ -35,8 +37,8 @@ cd /home/pi
 	shieldsDown
 	sleep 1	
 	carouselOff
-        (./dbuscontrol.sh pause)&
-        (./dbuscontrol.sh unhidevideo)&
+        ./dbuscontrol.sh pause
+	./dbuscontrol.sh unhidevideo
 	sleep 1
 	midiOn
 	sleep 60
