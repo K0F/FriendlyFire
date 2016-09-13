@@ -1,23 +1,43 @@
 #!/bin/bash
 (sudo touch /forcefsck)&
+
+
+export DISPLAY=127.0.0.1:0.0
+export XAUTHORITY=/home/pi/.Xauthority
+export DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-BouFPQKgqg,guid=64b483d7678f2196e780849752e67d3c
+
+#(mkfifo /home/pi/ctl)&
 (cat /dev/ttyACM0 &> /dev/null)&
+(cd /home/pi && aseqdump -p 20 | ./parse.sh )&
+#(sudo -u pi dbus-launch --exit-with-session > /home/pi/log.txt)&
 
-echo "hello world" > ~/log.txt
 
-(/usr/bin/omxplayer --loop --no-osd -b -ohdmi video.mp4 < /home/pi/ctl)&
-(echo -n i > /home/pi/ctl)&
+echo "hello world" >> /home/pi/log.txt
 
-bash /home/pi/FriendlyFire/scripts/serialOn.sh
-source /home/pi/FriendlyFire/scripts/master.sh
+(/usr/bin/omxplayer --loop --no-osd -b -olocal video.mp4)&
+#(echo -n i > /home/pi/ctl)&
+
+bash /home/pi/serialOn.sh
+source /home/pi/master.sh
+
+cd /home/pi
 
 (while true; do 
 	sleep 10
+	midiOn
+	sleep 1
+        (./dbuscontrol.sh pause)&
+        (./dbuscontrol.sh hidevideo)&
 	shieldsUp
 	carouselOn
 	sleep 10
-	for i in `seq 1 80`; do carouselAdvance; sleep 1 ; done
+	for i in `seq 1 20`; do carouselAdvance; sleep 7 ; done
 	shieldsDown
 	sleep 1	
 	carouselOff
+        (./dbuscontrol.sh pause)&
+        (./dbuscontrol.sh unhidevideo)&
+	sleep 1
+	midiOn
 	sleep 60
-done)
+done)&
