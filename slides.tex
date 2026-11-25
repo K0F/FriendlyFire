@@ -134,16 +134,21 @@
 \end{frame}
 
 % Slide 5: The Brotherhood Cycle
-\begin{frame}{I. The Brotherhood: Protiválečné bratrstvo (1996--1998)}
+\begin{frame}{I. The Brotherhood (1990--1998): 6 stolů a epistémický prostor}
   \begin{columns}
     \begin{column}{0.55\textwidth}
-      Cyklus šesti kinetických stolů s radikálním protiválečným poselstvím:
+      \small
+      Přechod od \textit{single frame} k \textbf{epistémickému prostoru}:
       \begin{itemize}
-        \item \textbf{„Bratrstvo“ ve zbrani a traumatu:} Tragické pouto veteránů poznamenaných válečným běsem.
-        \item \textbf{Dekonstrukce militarismu:} Pitvání patologické mužské obsese zbraněmi a ničením.
-        \item \textbf{Table \#3: Friendly Fire:} Zbraňový stůl střílející do vlastních řad – zbraň, která se obrací proti svým tvůrcům.
-        \item Premiéra: ICC Tokio 1998.
+        \item \textbf{T1 Translocations:} Taktický námořní plotr $17\times 17$, XY kamery, 20ft kolejnice.
+        \item \textbf{T2 Automata:} RPT gyroskopická hlavice, krychle $10\times 10\times 10$ ft, 3D model.
+        \item \textbf{T3 Friendly Fire:} Optický dělič, 5 pláten, PAD-5 bicí pad, LaserDisc, diapozitivy.
+        \item \textbf{T4 Stealth:} Tankové sedadlo, laser, dráhy uvnitř stroje na výrobu křemíkových waferů.
+        \item \textbf{T5 Scribe:} Pneumatické rameno s přísavkami listuje knihou, OCR čte, pero píše mizející text.
+        \item \textbf{T6 The Maiden:} Operační stůl, 12 solenoidů, vějíře Susan Hamilton, Steina s el. houslemi.
       \end{itemize}
+      \vspace{0.1cm}
+      \footnotesize\textbf{Affectual programming:} simulace svéhlavého organismu přes přetížení front.
     \end{column}
     \begin{column}{0.42\textwidth}
       \centering
@@ -401,16 +406,18 @@ qemu-system-i386 -hda friendlyfire_1998.img -m 64 -serial pty -parallel /dev/par
 \end{frame}
 
 % Slide 16: UNICOM Architecture
-\begin{frame}{III. Architektura UNICOM (1997)}
+\begin{frame}{III. Architektura UNICOM (Linux i386)}
   \begin{columns}
     \begin{column}{0.5\textwidth}
-      \textbf{Sada spolupracujících démonů:}
+      \small
+      \textbf{Distribuovaná sada démonů v C:}
       \begin{itemize}
-        \item \textbf{\texttt{actor1}:} Interpret scénáře a časování.
-        \item \textbf{\texttt{optodd}:} Řízení relé Opto 22 přes \texttt{/dev/lp1}.
-        \item \textbf{\texttt{mididd}:} Čtení úderů Roland padu z \texttt{/dev/cua0}.
-        \item \textbf{\texttt{picdd}:} Ovladač krokových motorů.
-        \item \textbf{\texttt{usc}:} Síťové sockety propojující PC se stanicí SGI O2.
+        \item \textbf{\texttt{logicdd} (:9850):} Síťová tabule proměnných (blackboard): \texttt{\%video\_mode}, \texttt{\%mvel}.
+        \item \textbf{\texttt{mididd} (:9800):} Čtení z Roland PAD-5 (kanál 9, nota \texttt{0x23}) pro actory.
+        \item \textbf{\texttt{serialdd} (:9900):} RS-232 LaserDiscu (\texttt{:1000 se pl}, \texttt{:64 rb}).
+        \item \textbf{\texttt{optodd} (\texttt{/dev/lp2}):} Negovaná logika: bit 6 napájení; \textbackslash232 video; \textbackslash254 diaky; \textbackslash247 posun karuselu.
+        \item \textbf{\texttt{picdd} \& \texttt{omsdd}:} Krokové motory a RPT hlavice.
+        \item \textbf{\texttt{actors}:} Spouštějí se a zabíjejí navzájem (\texttt{PID kill}).
       \end{itemize}
     \end{column}
     \begin{column}{0.48\textwidth}
@@ -648,16 +655,16 @@ Dest: Muzeum mesta Brna, Spilberk
   \end{columns}
 \end{frame}
 
-% Slide 26: Spilberk Exhibition
-\begin{frame}{VI. Výstava na Špilberku (Podzim 2016)}
+% Slide 26: Spilberk Exhibition & Light Revisited
+\begin{frame}{VI. Výstava na Špilberku (2016) \& Light Revisited}
   \begin{columns}
     \begin{column}{0.5\textwidth}
-      Woody Vašulka, rodák z Brna-Židenic, se vrací do rodného města:
+      Retrospektiva \textit{Mystery of Memory} (Muzeum města Brna):
       \begin{itemize}
-        \item \textbf{Galerijní autonomie:} Stůl musel spolehlivě běžet 8 hodin denně bez dozoru.
-        \item Automatický ranní náběh přes \texttt{cron} a \texttt{run.sh}.
-        \item Zvednutí clon, spuštění kompresoru, projekce diapozitivů, synchronizace videa.
-        \item Večerní bezpečné zaparkování pístů a vypnutí výbojek.
+        \item \textbf{Friendly Fire:} 8 hodin denně autonomního chodu (\texttt{cron}, \texttt{run.sh}, parkování pístů).
+        \item \textbf{Light Revisited (Noisefields):} Prostorová instalace pracující se speciálními \textbf{dichroickými zrcadly}.
+        \item \textbf{1/3 viditelného spektra:} Každé zrcadlo propouští/odráží přesně třetinu spektra (R, G, B).
+        \item Kužel analogového šumu se v sále štěpí na 3 oddělené pulzující kruhy v prostoru.
       \end{itemize}
     \end{column}
     \begin{column}{0.48\textwidth}
@@ -699,8 +706,8 @@ Dest: Muzeum mesta Brna, Spilberk
     \begin{column}{0.6\textwidth}
       Bohuslav Woody Vašulka zemřel 20. prosince 2019 v Santa Fe:
       \begin{itemize}
-        \item \textbf{Lidská paměť je křehká:} Paměť tvůrce odešla, ale dílo přežilo, osvobozeno ze závislosti na zaniklém proprietárním železe.
-        \item \textbf{Kód jako paměťová archa:} Otevřený repozitář chrání autorovu vizi pro budoucí generace.
+        \item \textbf{Lidská paměť je křehká:} Paměť tvůrce odešla, ale dílo přežilo, osvobozeno ze závislosti na zaniklém železe.
+        \item \textbf{Islandský odkaz (2024--2026):} \textit{Vasulka Chamber} v Reykjavíku; velká záchranná výstava \textit{The Brotherhood} v BERG Contemporary a konzervátorské sympozium s Tate a LACMA.
         \item \textbf{Etika péče:} Mediální archeologie není obdivování mrtvého šrotu, ale lidská péče o dialog člověka, paměti a stroje.
       \end{itemize}
       \vspace{0.3cm}

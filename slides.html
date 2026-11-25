@@ -406,17 +406,20 @@
       <div class="slide-category">I. Kontext díla</div>
       <div class="slide-num">05 / 28</div>
     </div>
-    <h1 class="slide-title">The Brotherhood: Protiválečné bratrstvo</h1>
+    <h1 class="slide-title">The Brotherhood (1990–1998): 6 stolů a epistémický prostor</h1>
     <div class="slide-content">
       <div class="grid-2">
         <div>
-          <p>Cyklus šesti kinetických stolů <em>The Brotherhood</em> (1996–1998) nese <strong>hluboké protiválečné a veteránské poselství</strong>:</p>
-          <ul>
-            <li><strong>„Bratrstvo“ ve zbrani a traumatu:</strong> Název neodkazuje ke kamarádství, ale k tragickému poutu veteránů, kteří přežili válečnou mašinérii.</li>
-            <li><strong>Dekonstrukce militarismu:</strong> Woody zkoumá patologickou posedlost mužů zbraněmi, mechanikou a ničením.</li>
-            <li><strong>Dehumanizace:</strong> Technologie války zbavuje vojáka lidskosti a dělá z něj pouhé periferní čidlo zbraňového systému.</li>
-            <li><strong>Table #3: Friendly Fire:</strong> Válečný stůl zkoumající střelbu do vlastních řad – zbraň, která se obrací proti svému stvořiteli.</li>
+          <p>Přechod od <em>single frame</em> (rastr obrazovky) k <strong>epistémickému prostoru</strong> a militarismu:</p>
+          <ul style="font-size: 0.95rem;">
+            <li><strong>T1: Translocations / Rails:</strong> Námořní plotr $17\times 17$, XY kamery, 20ft kolejnice s projektory.</li>
+            <li><strong>T2: Automata:</strong> RPT gyroskopická hlavice, krychle $10\times 10\times 10$ ft, terče, 3D model.</li>
+            <li><strong>T3: Friendly Fire:</strong> Optický dělič, 5 pláten + 6 monitorů, LaserDisc, bicí pad Roland PAD-5.</li>
+            <li><strong>T4: Stealth:</strong> Sedadlo tanku, laser, dráhy uvnitř stroje na výrobu waferů, MIDI z jasu.</li>
+            <li><strong>T5: Scribe:</strong> Pneumatické rameno s přísavkami listuje knihou, OCR čte, světelné pero píše mizející kód.</li>
+            <li><strong>T6: The Maiden:</strong> Operační stůl, 12 solenoidů, vějíře Susan Hamilton, Steina s el. houslemi.</li>
           </ul>
+          <p style="margin-top: 0.5rem; font-size: 0.95rem;"><strong>Affectual programming:</strong> Stroj nereaguje deterministicky 1:1, ale skrze přetížení front a ztráty paketů vykazuje organické chování.</p>
         </div>
         <div class="img-frame">
           <img src="assets/FF.png" alt="Friendly Fire Table #3">
@@ -721,13 +724,14 @@ qemu-system-i386 -hda friendlyfire_1998.img -m 64 -serial pty -parallel /dev/par
     <div class="slide-content">
       <div class="grid-2">
         <div class="card">
-          <h3>Ekosystém démonů (1997–1998)</h3>
-          <ul>
-            <li><strong><code>actor1</code>:</strong> Interpret událostí v reálném čase. Čte skripty a synchronizuje LaserDisc s písty.</li>
-            <li><strong><code>optodd</code>:</strong> Démon obsluhující relé Opto 22 přes paralelní port <code>/dev/lp1</code>.</li>
-            <li><strong><code>mididd</code>:</strong> Démon čtoucí signály z Roland padu přes sériový port <code>/dev/cua0</code>.</li>
-            <li><strong><code>picdd</code>:</strong> Ovladač krokových motorů.</li>
-            <li><strong><code>usc</code> (UNICOM Socket Commander):</strong> IPC socketové rozhraní propojující Linux PC se stanicí SGI O2.</li>
+          <h3>Architektura démonů UNICOM (Linux i386)</h3>
+          <ul style="font-size: 0.95rem;">
+            <li><strong><code>logicdd</code> (:9850):</strong> Sdílená tabule proměnných (blackboard): <code>%video_mode</code>, <code>%mvel</code>.</li>
+            <li><strong><code>mididd</code> (:9800):</strong> Čte MIDI data z Roland PAD-5 (kanál 9, nota <code>0x23</code>) a předává actorům.</li>
+            <li><strong><code>serialdd</code> (:9900/9902):</strong> RS-232 příkazy LaserDiscu (<code>:1000 se pl</code>, <code>:64 rb</code>).</li>
+            <li><strong><code>optodd</code> + <code>/dev/lp2</code>:</strong> Řízení relé Opto 22 (negovaná logika, bit 6 napájení, <code>\232</code> video, <code>\254</code> diaky, <code>\247</code> posun karuselu Carousel).</li>
+            <li><strong><code>picdd</code> (:9700) & <code>omsdd</code> (:9901):</strong> Pohony krokových motorů PIC-Servo a RPT hlavic.</li>
+            <li><strong><code>actor132</code>:</strong> Nezávislé procesy, které se dynamicky spouštějí a ukončují (<code>PID kill</code>).</li>
           </ul>
         </div>
         <div class="img-frame">
@@ -1024,22 +1028,22 @@ Total weight: 67 kg</code></pre>
     </div>
   </div>
 
-  <!-- Slide 26: Spilberk Exhibition -->
+  <!-- Slide 26: Spilberk Exhibition & Light Revisited -->
   <div class="slide">
     <div class="slide-header">
       <div class="slide-category">VI. Výstava Špilberk</div>
       <div class="slide-num">26 / 28</div>
     </div>
-    <h1 class="slide-title">Hrad Špilberk (Podzim 2016): V plné síle</h1>
+    <h1 class="slide-title">Hrad Špilberk (Podzim 2016) & Light Revisited</h1>
     <div class="slide-content">
       <div class="grid-2">
         <div>
-          <p>Woody Vašulka se symbolicky vrátil do svého rodného Brna. Instalace Friendly Fire byla srdcem velké retrospektivy:</p>
+          <p>Woody se vrátil do Brna na retrospektivu <em>Mystery of Memory</em> (Muzeum města Brna):</p>
           <ul>
-            <li><strong>Galerijní autonomie:</strong> Systém běžel 8 hodin denně bez nutnosti lidského zásahu.</li>
-            <li>Ranní automatický start přes <code>cron</code> a skript <code>run.sh</code>.</li>
-            <li>Periodické zvednutí clon, spuštění kompresoru, projekce diáků a přepnutí do interaktivního módu.</li>
-            <li>Večerní korektní zaparkování pístů a vypnutí optiky.</li>
+            <li><strong>Friendly Fire:</strong> 8 hodin denně autonomního provozu (cron, <code>run.sh</code>, samočinné parkování pístů).</li>
+            <li><strong>Light Revisited (Noisefields):</strong> Prostorová instalace se speciálními <strong>dichroickými zrcadly</strong>.</li>
+            <li><strong>Rozklad spektra na třetiny:</strong> Každé zrcadlo propouští/odráží právě <strong>1/3 viditelného spektra (R, G, B)</strong>.</li>
+            <li>Světelný kužel projektoru vytváří v temném sále 3 prostorově oddělené pulzující kruhy elektronického šumu.</li>
           </ul>
         </div>
         <div class="img-frame">
@@ -1081,18 +1085,19 @@ Total weight: 67 kg</code></pre>
   <!-- Slide 28: Epilogue: What Remains When Memory Fades? -->
   <div class="slide">
     <div class="slide-header">
-      <div class="slide-category">VII. Epilog & Paměť</div>
+      <div class="slide-category">VII. Epilog & Islandský odkaz</div>
       <div class="slide-num">28 / 28</div>
     </div>
     <h1 class="slide-title">Co zůstane, když paměť vyhasne?</h1>
     <div class="slide-content">
       <div class="grid-2">
         <div>
-          <p>Woody Vašulka zemřel 20. prosince 2019 v Santa Fe. Příběh resuscitace Friendly Fire odhalil hlubokou pravdu:</p>
+          <p>Woody Vašulka zemřel 20. prosince 2019 v Santa Fe. Záchrana <em>The Brotherhood</em> však pokračuje:</p>
           <ul>
-            <li><strong>Lidská paměť je křehká:</strong> Paměť tvůrce odešla, ale jeho dílo přežilo, protože bylo osvobozeno ze závislosti na zaniklém hardwaru.</li>
-            <li><strong>Kód jako paměťová archa:</strong> Otevřený kód v gitu ([github.com/k0f/friendlyfire](https://github.com/k0f/friendlyfire)) chrání Woodyho vizi před zapomněním.</li>
-            <li><strong>Etika péče:</strong> Mediální archeologie není uctívání muzeálních exponátů, ale lidská péče o dialog člověka, paměti a stroje.</li>
+            <li><strong>Vasulka Chamber (Reykjavík):</strong> Archiv při Národní galerii Islandu v rodné zemi Steiny pečuje o dílo.</li>
+            <li><strong>BERG Contemporary (2024–2026):</strong> Monumentální záchranná výstava všech stolů <em>The Brotherhood</em> v Reykjavíku provázená mezinárodním sympoziem s Tate a LACMA.</li>
+            <li><strong>Kód jako paměťová archa:</strong> Otevřený kód v gitu (<a href="https://github.com/k0f/friendlyfire" target="_blank" style="color: var(--accent);">github.com/k0f/friendlyfire</a>) a technická genealogie (Joey Heinen) chrání dílo před zánikem.</li>
+            <li><strong>Etika péče:</strong> Mediální archeologie není uctívání muzeálního šrotu, ale lidská péče o dialog člověka, paměti a stroje.</li>
           </ul>
         </div>
         <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
