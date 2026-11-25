@@ -811,9 +811,12 @@ echo -n "/00000000" > /dev/ttyACM0</code></pre>
             <li>Steina nekompromisně vstoupila do zvukové dramaturgie.</li>
           </ul>
         </div>
-        <div class="img-frame">
-          <img src="assets/frame_10.jpg" alt="Woody a Steina při zkouškách">
-          <div class="img-caption">Zkoušky pláten a laserové optiky v Santa Fe (léto 2016)</div>
+        <div class="img-frame" style="padding: 0.5rem;">
+          <video controls preload="metadata" style="max-width: 100%; max-height: 380px; border-radius: 4px; background: #000;" poster="assets/frame_10.jpg">
+            <source src="assets/friendly_fire_montage.mp4" type="video/mp4">
+            Váš prohlížeč nepodporuje přehrávání HTML5 videa.
+          </video>
+          <div class="img-caption">▶ Video střih (65 s): Sklad Rodeo Road, dílna Ruffina St., testování pístů a oživení</div>
         </div>
       </div>
     </div>
@@ -1072,6 +1075,7 @@ Total weight: 67 kg</code></pre>
 
   // Keyboard navigation
   window.addEventListener('keydown', (e) => {
+    if (e.target.tagName === 'VIDEO' || e.target.tagName === 'AUDIO') return;
     if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
       e.preventDefault();
       nextSlide();

@@ -1,0 +1,133 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[margin=1.5cm]{geometry}
+\usepackage{fontspec}
+\usepackage{polyglossia}
+\setmainlanguage{czech}
+
+\usepackage{multicol}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\setsansfont{DejaVu Sans}
+\setmonofont{DejaVu Sans Mono}
+\renewcommand{\familydefault}{\sfdefault}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{FRIENDLY FIRE: TAHÁK PRO PŘEDNÁŠEJÍCÍHO} \small(Kryštof Pešek / kof)}
+\rhead{\small Santa Fe 2016 $\rightarrow$ Špilberk Brno | Stopáž: 45--55 min}
+\cfoot{\thepage}
+
+\setlength{\columnsep}{1cm}
+\setlist{nosep,leftmargin=1.2em}
+
+\tcbset{
+  colback=black!4,
+  colframe=black!70,
+  boxrule=0.5pt,
+  arc=2pt,
+  left=4pt,right=4pt,top=4pt,bottom=4pt,
+  before skip=4pt,after skip=6pt
+}
+
+\newcommand{\badge}[1]{\textbf{\colorbox{black}{\textcolor{white}{\small~#1~}}}}
+
+\begin{document}
+
+\begin{multicols}{2}
+
+\begin{tcolorbox}
+\badge{00:00 - 02:00} \textbf{Slajd 01: Úvod a rámec}\\
+$\bullet$ Nejde o akademickou teorii, ale zprávu z terénní záchrany.\\
+$\bullet$ 18 let leželo dílo v bednách s nálepkou „neopravitelné“.\\
+$\bullet$ Santa Fe (léto 2016) $\rightarrow$ Špilberk Brno (podzim 2016).
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{02:00 - 05:00} \textbf{Slajd 02: Krédo mediální archeologie}\\
+$\bullet$ \textit{„Dílo neexistuje, nemá-li kontext.“} (23. 7. 2016).\\
+$\bullet$ Rozpor: muzejní hrob (pietní sklo) vs. živý dýchající stroj.\\
+$\bullet$ Cílem je obnova původní kinetické a sonické choreografie.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{05:00 - 08:00} \textbf{Slajdy 03--04: The Brotherhood \& Stůl}\\
+$\bullet$ \textbf{Slajd 03:} Woodyho odklon od video signálu v 90. letech. Los Alamos vojenský materiál. \textit{Friendly Fire}: střelba do vlastních.\\
+$\bullet$ \textbf{Slajd 04 (Anatomie):} 3 technologické epochy v jednom těle:\\
+- Těžká pneumatika: kompresor, písty, hliník.\\
+- Optika 80. let: LaserDisc Pioneer, Kodak Carousel 35mm.\\
+- Výpočetní technika 90. let: Linux i386, SGI IRIX, Opto 22, MIDI.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{08:00 - 11:00} \textbf{Slajd 05: 18 let hibernace (1998--2016)}\\
+$\bullet$ Po premiéře v Tokiu (ICC 1998) rozloženo do beden.\\
+$\bullet$ Zkáza: LaserDisc mechanika mrtvá, Opto 22 spálená, ventily plné pouštního prachu, dokumentace jen v útržcích.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{11:00 - 16:00} \textbf{Slajdy 06--08: Expedice \& Steina}\\
+$\bullet$ \textbf{Slajd 06:} Výsadek v poušti. Telefonát od Jennifer DeFelice (FaVU VUT) přes Miloše Vojtěchovského. 14 dní v horku.\\
+$\bullet$ \textbf{Slajd 07 (Tři body):}\\
+1. \textit{Rodeo Road:} Temný sklad, prach, bedny všech 6 stolů.\\
+2. \textit{Ruffina Street:} Pronajatá montážní hala, testování pístů.\\
+3. \textit{Agua Fria Road:} Dům Vašulkových, archiv magnetických pásů.\\
+$\bullet$ \textbf{Slajd 08 (Steina):} Tvrdila \textit{„To je Woodyho stůl!“}, ale byla lidským indexem. Věděla, ve které krabici leží čočky a zrcadla.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{16:00 - 21:00} \textbf{Slajdy 09--12: Forenzní archeologie}\\
+$\bullet$ \textbf{Slajd 09:} Nález disku i386 v bedně se zdroji. Obraz přes \texttt{ddrescue}.\\
+$\bullet$ \textbf{Slajd 10:} Emulace v QEMU přímo v dílně na laptopu. Bleskové oživení původního Linuxu 1997.\\
+$\bullet$ \textbf{Slajd 11:} Objev architektury UNICOM (Gritzo \& Hamilton): pětice démonů (\texttt{actor1}, \texttt{optodd}, \texttt{mididd}, \texttt{picdd}, \texttt{usc}).\\
+$\bullet$ \textbf{Slajd 12:} Rozeta \texttt{PITT.TXT} (8. 3. 1997). Časový kód 922 sekund (15m 22s). Přesný part pístů, diáků a LaserDisku.
+\end{tcolorbox}
+
+\columnbreak
+
+\begin{tcolorbox}
+\badge{21:00 - 26:00} \textbf{Slajdy 13--16: Etika a náhrady}\\
+$\bullet$ \textbf{Slajd 13 (Doktrína):} \textit{Zachovat tělo; nahradit zaniklé orgány otevřeným systémem.}\\
+$\bullet$ \textbf{Slajd 14 (Opto 22 $\rightarrow$ Arduino + SSR):} Charles Tuttle navrhl miniaturní desku s polovodičovými relé. Konec proudových rázů. Přechod z LPT (\texttt{\textbackslash 332}) na ASCII USB serial (\texttt{/1100000}).\\
+$\bullet$ \textbf{Slajd 15 (LaserDisc $\rightarrow$ RPi H.264):} Nález NTSC DV pásku; deinterlace \texttt{yadif}; nasazení Raspberry Pi s \texttt{omxplayer} a D-Bus seekem (<80 ms).\\
+$\bullet$ \textbf{Slajd 16:} Kódový diff. Zastaralé proprietární C vs. čistý POSIX shell a Arduino.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{26:00 - 32:00} \textbf{Slajdy 17--19: Zásah autorů \& Zvuk}\\
+$\bullet$ \textbf{[VIDEO INTERMEZZO]:} Pustit video ukázku montáže.\\
+$\bullet$ \textbf{Slajd 17:} Živý autor mění pravidla hry. Není to mumifikace, ale tvůrčí dialog. Woody jako strojař.\\
+$\bullet$ \textbf{Slajd 18 (Steinino ucho):} Při první projekci Steina křičí: \textit{„Hluk je moc nahlas! Vojenské dialogy jsou utopené, vytáhněte je!“} Okamžité přemíchání v terénu.\\
+$\bullet$ \textbf{Slajd 19:} \textbf{Pustit 60s audio ukázku} z rozhovoru na Zoom H2n (\texttt{vasulka\_interview\_excerpt.opus}).
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{32:00 - 38:00} \textbf{Slajdy 20--22: Špilberk a interakce}\\
+$\bullet$ \textbf{Slajd 20:} 67 kg beden přes oceán (\texttt{crates.txt}).\\
+$\bullet$ \textbf{Slajd 21:} Výstava Špilberk. Autonomie 8 hodin denně. Ranní náběh přes \texttt{run.sh}, večerní bezpečné parkování.\\
+$\bullet$ \textbf{Slajd 22:} Roland MIDI pad. Divák udeří $\rightarrow$ písty syčí, clony padají, video skočí na sekvenci výslechu, Carousel cvakne. Divák jako operátor zbraně.
+\end{tcolorbox}
+
+\begin{tcolorbox}
+\badge{38:00 - 45:00} \textbf{Slajdy 23--24: Lekce \& Diskuse}\\
+$\bullet$ \textbf{1. Otevřenost je věčnost:} Jen open-source hardware (RPi, Arduino) a kód v gitu přežijí dalších 30 let.\\
+$\bullet$ \textbf{2. Živý autor:} Korekce vyznění díla pro novou dobu.\\
+$\bullet$ \textbf{3. Kód je partitura:} Git repozitář je samotným uměleckým záznamem.\\
+$\bullet$ Odkaz: \texttt{github.com/k0f/friendlyfire}. Otevření diskuse.
+\end{tcolorbox}
+
+\begin{tcolorbox}[colback=black!10]
+\textbf{Pohotovostní odpovědi na záludné dotazy:}\\
+1. \textit{„Proč ne původní LaserDisc z eBay?“} $\rightarrow$ Laserová dioda po 20 letech degraduje, mechanika by v 3měsíčním provozu 8h denně nevydržela ani týden. RPi nabízí 50 let života.\\
+2. \textit{„Nezměnilo Arduino chování?“} $\rightarrow$ Naopak, polovodičová relé (SSR) eliminovala restarty PC způsobené obloukem na starých cívkách.\\
+3. \textit{„Jak reagoval Woody?“} $\rightarrow$ Byl vyučený strojař. Když viděl, že písty dýchají na milimetr přesně podle zápisů z roku 1997, byl nadšený.
+\end{tcolorbox}
+
+\end{multicols}
+
+\vspace{0.2cm}
+\centering\footnotesize\textcolor{gray}{--τέχνη \& kof | Vygenerováno pro Kryštofa Peška}
+
+\end{document}
