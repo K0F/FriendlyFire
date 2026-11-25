@@ -1,0 +1,1111 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mediální archeologie a resuscitace díla: Friendly Fire (Woody Vašulka)</title>
+<style>
+  :root {
+    --bg-color: #0d0f12;
+    --slide-bg: #14181d;
+    --text-color: #e2e8f0;
+    --text-dim: #94a3b8;
+    --accent: #f59e0b;
+    --accent-red: #ef4444;
+    --accent-cyan: #06b6d4;
+    --accent-green: #10b981;
+    --border-color: #272f38;
+    --code-bg: #090b0e;
+    --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-mono: "IBM Plex Mono", "SF Mono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-sans);
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #deck {
+    position: relative;
+    width: 92vw;
+    max-width: 1400px;
+    height: 88vh;
+    max-height: 840px;
+    background-color: var(--slide-bg);
+    border: 1px solid var(--border-color);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  .slide {
+    position: absolute;
+    inset: 0;
+    padding: 3rem 4rem;
+    display: none;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+
+  .slide.active {
+    display: flex;
+  }
+
+  .slide-header {
+    margin-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.8rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  .slide-category {
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    color: var(--accent);
+  }
+
+  h1.slide-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.2;
+    margin-top: 0.3rem;
+  }
+
+  .slide-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+    color: var(--text-color);
+  }
+
+  p { margin-bottom: 0.5rem; }
+
+  strong { color: #fff; }
+
+  .highlight { color: var(--accent); font-weight: 600; }
+  .highlight-cyan { color: var(--accent-cyan); font-weight: 600; }
+  .highlight-red { color: var(--accent-red); font-weight: 600; }
+
+  blockquote {
+    border-left: 4px solid var(--accent);
+    padding-left: 1.5rem;
+    margin: 1rem 0;
+    font-style: italic;
+    color: #cbd5e1;
+    background: rgba(245, 158, 11, 0.05);
+    padding: 1rem 1.5rem;
+    border-radius: 0 6px 6px 0;
+  }
+
+  blockquote cite {
+    display: block;
+    font-style: normal;
+    font-size: 0.95rem;
+    color: var(--accent);
+    margin-top: 0.5rem;
+    font-family: var(--font-mono);
+  }
+
+  .grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+  }
+
+  .grid-3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .card {
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 1.2rem;
+  }
+
+  .card h3 {
+    font-size: 1.15rem;
+    color: var(--accent);
+    margin-bottom: 0.6rem;
+    font-family: var(--font-mono);
+  }
+
+  ul {
+    list-style-type: none;
+    padding-left: 0;
+  }
+
+  ul li {
+    position: relative;
+    padding-left: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+
+  ul li::before {
+    content: "■";
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-size: 0.8rem;
+    top: 0.2rem;
+  }
+
+  pre, code {
+    font-family: var(--font-mono);
+  }
+
+  pre {
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .img-frame {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: var(--code-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    padding: 0.75rem;
+  }
+
+  .img-frame img {
+    max-width: 100%;
+    max-height: 380px;
+    object-fit: contain;
+    border-radius: 4px;
+  }
+
+  .img-caption {
+    font-size: 0.85rem;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    margin-top: 0.5rem;
+    text-align: center;
+  }
+
+  /* Audio player styling */
+  .audio-player-box {
+    background: rgba(6, 182, 212, 0.08);
+    border: 1px solid var(--accent-cyan);
+    border-radius: 6px;
+    padding: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .audio-player-box audio {
+    width: 100%;
+    filter: invert(0.9) hue-rotate(180deg);
+  }
+
+  /* Controls and Progress Bar */
+  #controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 92vw;
+    max-width: 1400px;
+    margin-top: 0.8rem;
+    color: var(--text-dim);
+    font-family: var(--font-mono);
+    font-size: 0.9rem;
+  }
+
+  .nav-btn {
+    background: var(--slide-bg);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 0.4rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: var(--font-mono);
+    transition: all 0.2s;
+  }
+
+  .nav-btn:hover {
+    background: var(--accent);
+    color: #000;
+    border-color: var(--accent);
+  }
+
+  #progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 4px;
+    background: var(--accent);
+    transition: width 0.3s ease;
+  }
+
+  .notes-panel {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(13, 15, 18, 0.95);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    padding: 1rem;
+    font-size: 0.95rem;
+    color: #fef08a;
+    z-index: 100;
+  }
+
+  .title-hero {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+
+  .title-hero h1 {
+    font-size: 3.2rem;
+    color: #fff;
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.02em;
+  }
+
+  .title-hero .subtitle {
+    font-size: 1.6rem;
+    color: var(--accent);
+    font-family: var(--font-mono);
+    margin-bottom: 2rem;
+  }
+
+  .title-hero .meta {
+    font-size: 1.1rem;
+    color: var(--text-dim);
+    line-height: 1.8;
+  }
+
+  .stamp {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border: 1px solid var(--accent);
+    color: var(--accent);
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    letter-spacing: 0.1em;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+  }
+</style>
+</head>
+<body>
+
+<div id="deck">
+  <div id="progress-bar"></div>
+
+  <!-- Slide 1: Title -->
+  <div class="slide active">
+    <div class="title-hero">
+      <span class="stamp">PŘEDNÁŠKA // MEDIÁLNÍ ARCHEOLOGIE V TERÉNU</span>
+      <h1>FRIENDLY FIRE</h1>
+      <div class="subtitle">Resuscitace válečného stolu Woodyho Vašulky</div>
+      <div class="meta">
+        <strong>Přednášející:</strong> Kryštof Pešek (kof)<br>
+        <strong>Kontext:</strong> Sběr dat se žijícími autory (Santa Fe 2016) ➔ Špilberk Brno 2016<br>
+        <span style="font-family: var(--font-mono); font-size: 0.9rem; color: var(--accent);">[Použijte šipky ← → nebo Mezerník k navigaci, F pro fullscreen]</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 2: Prologue -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">I. Předpolí & Etika</div>
+      <div class="slide-num">02</div>
+    </div>
+    <h1 class="slide-title">Krédo mediální archeologie</h1>
+    <div class="slide-content">
+      <blockquote>
+        "Neznám mnoho palčivějších pocitů než představa jakkoli nepřekonatelné výzvy, která je pro svoji domnělou nepřekonatelnost odmítnuta...<br><br>
+        <strong>Dílo neexistuje, nemá-li kontext.</strong>"
+        <cite>— Kryštof Pešek, Santa Fe, 23. 7. 2016</cite>
+      </blockquote>
+      <div class="grid-2" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Muzeum vs. Živý stroj</h3>
+          <p>Digitální a kybernetické umění 90. let umírá v depozitářích jako "technologická fosilie". Kurátoři se bojí spálených relé a mrtvých sběrnic.</p>
+        </div>
+        <div class="card">
+          <h3>Resuscitace, ne pietní sklo</h3>
+          <p>Cílem nebylo vystavit nefunkční hliníkové torzo za sklem, ale <strong>obnovit plnou kinetickou a sonickou choreografii</strong> v původním rytmu autorů.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 3: The Brotherhood Cycle -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">I. Kontext díla</div>
+      <div class="slide-num">03</div>
+    </div>
+    <h1 class="slide-title">Cyklus The Brotherhood (1996–1998)</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Woody Vašulka v 90. letech radikálně opouští čistě obrazové experimenty s Rutt/Etra scan procesorem a vrhá se do <strong>dekonstrukce válečných technologií</strong>:</p>
+          <ul>
+            <li><strong>6 interaktivních stolů</strong> zkoumajících militarismus, kybernetiku a dehumanizaci.</li>
+            <li>Výpůjčky vojenského materiálu z laboratoří v Los Alamos a Sandia.</li>
+            <li><strong>Table #3: Friendly Fire</strong> – válečný stůl zkoumající fenomén "střelby do vlastních řad", kde senzory a zbraně obracejí destrukci proti svým tvůrcům.</li>
+            <li>Světová premiéra na ICC v Tokiu (1998).</li>
+          </ul>
+        </div>
+        <div class="img-frame">
+          <img src="assets/FF.png" alt="Friendly Fire Table #3">
+          <div class="img-caption">Woody Vašulka: Table #3 (Friendly Fire), The Brotherhood (1998)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 4: Anatomy of Table #3 -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">I. Anatomie instalace</div>
+      <div class="slide-num">04</div>
+    </div>
+    <h1 class="slide-title">Hardware válečného stolu: Hybrid 90. let</h1>
+    <div class="slide-content">
+      <div class="grid-3">
+        <div class="card">
+          <h3>Pneumatika & Mechanika</h3>
+          <ul>
+            <li>Letecký hliník a ocelový rám stolu</li>
+            <li>Tlakové vzduchové písty</li>
+            <li>Tři padací translucentní clony</li>
+            <li>Polopropustná zrcadla & optické lomy</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Optika & Obraz</h3>
+          <ul>
+            <li>Pioneer Industrial LaserDisc přehrávač</li>
+            <li>Kodak Carousel 35mm diapozitivní projektor</li>
+            <li>SGI IRIX workstation (O2) pro grafiku</li>
+            <li>CRT / optická zadní projekce</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Řízení & Senzory</h3>
+          <ul>
+            <li>Intel i386 PC s Linuxem (1997)</li>
+            <li>Průmyslová relé Opto 22 (paralelní port)</li>
+            <li>Roland MIDI bicí pad pro diváka</li>
+            <li>UNICOM Socket Commander architektura</li>
+          </ul>
+        </div>
+      </div>
+      <p style="text-align: center; font-family: var(--font-mono); color: var(--accent); margin-top: 1rem;">
+        Výzva: Každý z těchto systémů pocházel z jiného technologického paradigmatu.
+      </p>
+    </div>
+  </div>
+
+  <!-- Slide 5: The 18-Year Hibernation -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">I. Stav před expedicí</div>
+      <div class="slide-num">05</div>
+    </div>
+    <h1 class="slide-title">18 let hibernace (1998 ➔ 2016)</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Po demontáži výstavy v Tokiu v roce 1998 byl stůl rozložen na součástky a uložen do přepravních beden v Santa Fe:</p>
+          <ul>
+            <li>LaserDisc přehrávač nefungoval a původní disky byly nečitelné či ztracené.</li>
+            <li>Průmyslová deska Opto 22 shořela při neodborných testech.</li>
+            <li>Pneumatické ventily zatuhly prachem z pouště Nového Mexika.</li>
+            <li>Veškerá dokumentace existovala jen ve fragmentech ve formě poznámek programátorů Russella Gritza a Bruce Hamiltona.</li>
+          </ul>
+          <p style="margin-top: 1rem;"><strong>Obecný verdikt kurátorů:</strong> <em>"Nemožné zprovoznit, chybí LaserDisc a řídicí elektronika."</em></p>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-red);">
+          <h3 style="color: var(--accent-red);">Katalog zkázy</h3>
+          <p><strong>1. Hardwarová smrt:</strong> Mechanická relé, optické disky, proprietární karty ISA/PCI.<br><br>
+          <strong>2. Softwarová smrt:</strong> Linux kernel 2.0.x, nedokumentované binárky pro SGI IRIX MIPS.<br><br>
+          <strong>3. Ztráta kontextu:</strong> Kdo ví, jak přesně měly písty dýchat a co měl pad vyvolávat?</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 6: Santa Fe Expedition -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">II. Expedice Santa Fe</div>
+      <div class="slide-num">06</div>
+    </div>
+    <h1 class="slide-title">Výsadek v poušti (Červenec 2016)</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Telefonát od Jennifer Helia DeFelice (FaVU VUT) zprostředkovaný Milošem Vojtěchovským: <em>"Woody potřebuje někoho do Santa Fe, kdo oživí Friendly Fire pro výstavu na Špilberku."</em></p>
+          <ul>
+            <li><strong>Mise:</strong> 14 dní na nalezení, identifikaci a resuscitaci stolu přímo v Santa Fe.</li>
+            <li>Extrémní teploty, prach a desítky neoznačených beden z celého cyklu *The Brotherhood*.</li>
+            <li>Úzká spolupráce se žijícími autory: Steinou a Woodym Vašulkovými.</li>
+          </ul>
+        </div>
+        <div class="img-frame">
+          <img src="assets/frame_00.jpg" alt="Santa Fe sklad">
+          <div class="img-caption">Santa Fe, Nové Mexiko: Hledání dílů v horku a prachu skladů</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 7: Three Sacred Locations -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">II. Topografie pátrání</div>
+      <div class="slide-num">07</div>
+    </div>
+    <h1 class="slide-title">Tři body v Santa Fe: Archeologický trojúhelník</h1>
+    <div class="slide-content">
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Rodeo Road</h3>
+          <p><strong>Pronajatý sklad:</strong> Temná komora plná hliníkových profilů a beden z Tokia 1998. Zde ležel původní pevný disk i386 a písty.</p>
+        </div>
+        <div class="card">
+          <h3>2. Ruffina Street</h3>
+          <p><strong>Tovární hala:</strong> Dočasná laboratoř. Nalezení translucentních pláten, montážní stůl, tlakování kompresoru a noční programování.</p>
+        </div>
+        <div class="card">
+          <h3>3. Agua Fria Road</h3>
+          <p><strong>Dům Vašulkových:</strong> Archiv původních analogových pásů, NTSC DV kazet, optiky a osobních vzpomínek u večeře.</p>
+        </div>
+      </div>
+      <blockquote style="margin-top: 1rem;">
+        "Každý den začínal kávou na Agua Fria, pokračoval prohrabáváním beden na Rodeo Road a končil v noci na Ruffina Street při syčení unikajícího vzduchu z pístů."
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- Slide 8: Steina as Human Compass -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">II. Žijící paměť</div>
+      <div class="slide-num">08</div>
+    </div>
+    <h1 class="slide-title">Steina Vašulková: Živý lidský kompas</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Ačkoliv Steina vždy tvrdila: <em>"Já s Friendly Fire nemám nic společného, to je čistě Woodyho válečný stůl,"</em> její role byla klíčová:</p>
+          <ul>
+            <li><strong>Navigace v chaosu:</strong> Přesně věděla, ve které krabici leží původní optika Kodak Carousel a kde hledat kabelové svazky.</li>
+            <li><strong>Emocionální stabilita:</strong> Tlumila Woodyho občasnou technickou skepsi a udržovala pracovní tempo.</li>
+            <li><strong>Audit zvuku a obrazu:</strong> Byla prvním nekompromisním kritikem při každém dílčím oživení.</li>
+          </ul>
+        </div>
+        <div class="img-frame">
+          <img src="assets/frame_05.jpg" alt="Dílna Ruffina Street">
+          <div class="img-caption">Montáž a revize optických clon v dílně na Ruffina Street</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 9: Digital Forensic Discovery -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">III. Forenzní archeologie</div>
+      <div class="slide-num">09</div>
+    </div>
+    <h1 class="slide-title">Nález pokladu: Pevný disk z roku 1998</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Na dně krabice s napájecími zdroji byl nalezen <strong>originální plotnový disk</strong> z řídicího PC instalace (Intel i386):</p>
+          <ul>
+            <li>Připojení přes USB-IDE adaptér s napětím – disk se roztočil bez chyby ploten!</li>
+            <li>Okamžitý binární dump (bit-by-bit kopie) přes <code>ddrescue</code>.</li>
+            <li>Nalezena kompletní instalace raného Linuxu z přelomu let 1997/1998.</li>
+            <li>Nalezeny zdrojové kódy démonů v C, skripty a konfigurační soubory pro Tokyo ICC 1998.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Forenzní výtěžek disku</h3>
+          <pre><code>/home/woody/
+├── actor1.c          # Jádro choreografie
+├── optodd.c          # Ovladač Opto 22
+├── mididd.c          # MIDI listener (/dev/cua0)
+├── usc/              # SGI síťový démon
+└── minicom/
+    └── PITT.TXT      # Log z 8. března 1997!</code></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 10: QEMU Emulation -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">III. Emulace v QEMU</div>
+      <div class="slide-num">10</div>
+    </div>
+    <h1 class="slide-title">Oživení i386 v QEMU virtualizaci</h1>
+    <div class="slide-content">
+      <p>Namísto snahy o shánění fyzické základní desky z roku 1997 byl diskový obraz spuštěn ve virtuálním stroji <strong>QEMU</strong> přímo na moderním notebooku v hale na Ruffina Street:</p>
+      <pre><code># Spuštění zrestaurovaného disku v QEMU
+qemu-system-i386 -hda friendlyfire_1998.img -m 64 -serial pty -parallel /dev/parport0</code></pre>
+      <div class="grid-2" style="margin-top: 1rem;">
+        <div class="card">
+          <h3>Co se podařilo zrekonstruovat</h3>
+          <p>Virtuální stroj nabootoval, spustil systémové démony a začal chrlit instrukce do virtuálních portů. Tím byla zachráněna <strong>originální logika časování</strong> bez nutnosti odhadovat prodlevy.</p>
+        </div>
+        <div class="card">
+          <h3>Architektonický objev</h3>
+          <p>Systém neřídil jeden monolitický program, ale elegantní <strong>modulární UNIXová architektura UNICOM</strong> vyvinutá pro Woodyho výzkumníky Russellem Gritzem a Brucem Hamiltonem.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 11: UNICOM Daemon Architecture -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">III. Softwarová architektura 1997</div>
+      <div class="slide-num">11</div>
+    </div>
+    <h1 class="slide-title">Démoni UNICOM: Jak Woody řídil stroje</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div class="card">
+          <h3>Ekosystém démonů (1997–1998)</h3>
+          <ul>
+            <li><strong><code>actor1</code>:</strong> Interpret událostí v reálném čase. Čte skripty a synchronizuje LaserDisc s písty.</li>
+            <li><strong><code>optodd</code>:</strong> Démon obsluhující relé Opto 22 přes paralelní port <code>/dev/lp1</code>.</li>
+            <li><strong><code>mididd</code>:</strong> Démon čtoucí signály z Roland padu přes sériový port <code>/dev/cua0</code>.</li>
+            <li><strong><code>picdd</code>:</strong> Ovladač krokových motorů.</li>
+            <li><strong><code>usc</code> (UNICOM Socket Commander):</strong> IPC socketové rozhraní propojující Linux PC se stanicí SGI O2.</li>
+          </ul>
+        </div>
+        <div class="img-frame">
+          <img src="assets/friendly_fire_16.png" alt="Architektura UNICOM">
+          <div class="img-caption">Schéma architektury UNICOM a komunikace komponent stolu</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 12: The Rosetta Stone PITT.TXT -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">III. Rozetská deska</div>
+      <div class="slide-num">12</div>
+    </div>
+    <h1 class="slide-title">PITT.TXT: 922 sekund choreografie</h1>
+    <div class="slide-content">
+      <p>V adresáři Minicomu byl nalezen textový soubor <code>minicom/PITT.TXT</code> s časovým razítkem <strong>8. března 1997</strong>. Šlo o přesný záznam komunikace mezi <code>actor1</code> a LaserDiskem:</p>
+      <div class="grid-2">
+        <pre><code># minicom/PITT.TXT (úryvek z 8. 3. 1997)
+d08 for 1           # Carousel slide advance
+5se1801pl           # Laserdisc seek frame 5 & play
+echo -n "\332" > /dev/lp1  # Clona nahoru (Opto 22)
+wait 12             # Prodleva vteřin
+echo -n "\300" > /dev/lp1  # Clona dolů
+29082sepl           # Skok na frame 29082</code></pre>
+        <div class="card">
+          <h3>Dešifrování partitury</h3>
+          <p>Tento soubor byl <strong>hudební partiturou instalace</strong>. Odhalil:</p>
+          <ul>
+            <li>Celkovou délku smyčky (přesně 922 sekund = 15 min 22 s).</li>
+            <li>Předem stanovené body, kdy divák úderem do padu mění scénu.</li>
+            <li>Pravidla rotace diapozitivů v Carouselu.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 13: Restoration Ethics -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">IV. Restaurátorská etika</div>
+      <div class="slide-num">13</div>
+    </div>
+    <h1 class="slide-title">Restaurátorská etika: Tělo vs. Orgány</h1>
+    <div class="slide-content">
+      <blockquote style="font-size: 1.3rem;">
+        <strong>"Zachovat tělo a senzorickou zkušenost v plné autenticitě; nahradit zaniklé a neudržitelné vnitřní orgány otevřeným, trvanlivým systémem."</strong>
+      </blockquote>
+      <div class="grid-2" style="margin-top: 1rem;">
+        <div class="card" style="border-left: 3px solid var(--accent-green);">
+          <h3 style="color: var(--accent-green);">CO ZŮSTALO PŮVODNÍ (100 %)</h3>
+          <ul>
+            <li>Hliníkový rám stolu a optické stolice</li>
+            <li>Pneumatické ventily, písty a rozvody tlaku</li>
+            <li>Projekční clony a polopropustná zrcadla</li>
+            <li>Diaprojektor Kodak Carousel 35mm</li>
+            <li>Roland MIDI bicí pad</li>
+          </ul>
+        </div>
+        <div class="card" style="border-left: 3px solid var(--accent-cyan);">
+          <h3 style="color: var(--accent-cyan);">CO BYLO RESUSCITOVÁNO</h3>
+          <ul>
+            <li><strong>LaserDisc:</strong> ➔ Raspberry Pi (H.264 + D-Bus)</li>
+            <li><strong>Opto 22:</strong> ➔ Arduino Uno + Solid State Relays (SSR)</li>
+            <li><strong>Linux i386 PC:</strong> ➔ Mini-ITX Linux controller</li>
+            <li><strong>Proprietární kód:</strong> ➔ Open-source C & Python na GitHubu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 14: Replacement #1 Opto 22 to Arduino -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">IV. Hardwarová resuscitace #1</div>
+      <div class="slide-num">14</div>
+    </div>
+    <h1 class="slide-title">Opto 22 ➔ Arduino Uno + SSR</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Původní obří průmyslová deska Opto 22 na paralelní port byla neopravitelná. Místní spolupracovník <strong>Charles Tuttle</strong> navrhl kompaktní náhradu:</p>
+          <ul>
+            <li><strong>Arduino Uno:</strong> Přijímá příkazy přes USB serial (115 200 baudů).</li>
+            <li><strong>Solid State Relays (SSR):</strong> Opticky oddělená polovodičová relé – tichá, spolehlivá, bez jiskření na cívkách pístů.</li>
+            <li>Celá deska se vešla do původní montážní krabičky ve stole.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Protokol relé (Starý vs. Nový)</h3>
+          <p><strong>1997 (Paralelní port /dev/lp1):</strong></p>
+          <pre><code>echo -n "\332" > /dev/lp1   # Octal maska</code></pre>
+          <p style="margin-top: 0.8rem;"><strong>2016 (Arduino Serial /dev/ttyACM0):</strong></p>
+          <pre><code>echo -n "/1100000" > /dev/ttyACM0  # ASCII maska relé</code></pre>
+          <span style="font-size: 0.85rem; color: var(--accent);">Výhoda: Okamžitá čitelnost a debugovatelnost v terminálu.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 15: Replacement #2 LaserDisc to RPi -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">IV. Hardwarová resuscitace #2</div>
+      <div class="slide-num">15</div>
+    </div>
+    <h1 class="slide-title">LaserDisc ➔ Raspberry Pi & H.264</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Původní LaserDisc přehrávač Pioneer se sériovým ovládáním byl nenávratně pryč. Jak zachovat stejnou odezvu a kvalitu?</p>
+          <ul>
+            <li>V archivu na Agua Fria nalezen <strong>originální master na NTSC DV pásku</strong>.</li>
+            <li>Digitalizace a deinterlace (filtr <code>yadif</code>) do bezztrátového H.264.</li>
+            <li>Nasazení <strong>Raspberry Pi</strong> s přehrávačem <code>omxplayer</code> akcelerovaným na GPU.</li>
+            <li>Ovládání běhu a skoků v reálném čase přes <strong>D-Bus rozhraní</strong>.</li>
+            <li>Zpětný chod videa byl vyřešen vyrenderováním reversní video stopy.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Skok na časový kód přes D-Bus</h3>
+          <pre><code># D-Bus ovládání omxplayeru z daemonu
+dbuscontrol.sh seek $TARGET_MICROSECONDS
+
+# Posun o políčko zpět
+dbuscontrol.sh step</code></pre>
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; color: var(--text-dim);">
+            Odezva skoku: &lt; 80 ms, identická s mechanickým seekem optické hlavy LaserDisku.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 16: Code Archaeological Diff -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">IV. Srovnání kódů</div>
+      <div class="slide-num">16</div>
+    </div>
+    <h1 class="slide-title">Srovnání v terminálu: 1997 vs. 2016</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div class="card">
+          <h3 style="color: var(--accent-red);">1997: UNICOM / Dev nodes</h3>
+          <pre><code>/* actor1.c (1997) */
+fd_lp = open("/dev/lp1", O_WRONLY);
+write(fd_lp, "\332", 1); /* Písty nahoru */
+
+/* Laserdisc přes RS-232 /dev/cua1 */
+write(fd_ser, "5se1801pl\r", 10);
+
+/* Diaprojektor */
+write(fd_ser, "d08 for 1\r", 10);</code></pre>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">Proprietární porty, nutnost root oprávnění, závislost na ISA sběrnici.</p>
+        </div>
+        <div class="card">
+          <h3 style="color: var(--accent-green);">2016: FriendlyFire Open Source</h3>
+          <pre><code># run.sh & Arduino relay board (2016)
+echo -n "/1100000" > /dev/ttyACM0 # Písty
+
+# Raspberry Pi D-Bus seek
+./scripts/dbuscontrol.sh setposition 1801000
+
+# Carousel trigger přes SSR relé 8
+echo -n "/00000001" > /dev/ttyACM0
+sleep 0.1
+echo -n "/00000000" > /dev/ttyACM0</code></pre>
+          <p style="font-size: 0.85rem; color: var(--text-dim); margin-top: 0.5rem;">Standardní POSIX shell, USB serial, nezávislost na konkrétním železe.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 17: Living Authors Intervention -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">V. Zásah žijících autorů</div>
+      <div class="slide-num">17</div>
+    </div>
+    <h1 class="slide-title">Dílo není fosilie: Žijící autor v dílně</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Největší předností a zároveň výzvou mediální archeologie se žijícími autory je fakt, že <strong>dílo není definitivně uzavřené</strong>:</p>
+          <ul>
+            <li>Klasický restaurátor usiluje o zmrazení stavu v čase.</li>
+            <li>Žijící autor vidí své dílo po 18 letech novýma očima a chce ho korigovat.</li>
+            <li>Woody sledoval mechanické oživení s inženýrským kánonem vyučeného strojaře.</li>
+            <li>Steina nekompromisně vstoupila do zvukové dramaturgie.</li>
+          </ul>
+        </div>
+        <div class="img-frame">
+          <img src="assets/frame_10.jpg" alt="Woody a Steina při zkouškách">
+          <div class="img-caption">Zkoušky pláten a laserové optiky v Santa Fe (léto 2016)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 18: Steina and the Dialogues -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">V. Steinino ucho</div>
+      <div class="slide-num">18</div>
+    </div>
+    <h1 class="slide-title">Zásah Steiny: "Vytáhněte dialogy!"</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Když se na Ruffina Street poprvé rozběhla synchronní projekce z Raspberry Pi, Steina poslouchala zvuk v hale a řekla:</p>
+          <blockquote style="border-left-color: var(--accent-cyan);">
+            "Ten industriální dron je moc nahlas. Dialogy operátorů a vojáků jsou utopené. Musíte je vytáhnout do popředí – v těch slovech je celý smysl Friendly Fire!"
+          </blockquote>
+          <ul>
+            <li>Zvuková stopa byla v terénu zremasterována.</li>
+            <li>Hlasy vojenských pilotů a naváděcích operátorů dostaly prioritu.</li>
+            <li>Zvažovaly se české titulky, ale autoři je zamítli – surová angličtina armádního žargonu byla integrální součástí díla.</li>
+          </ul>
+        </div>
+        <div class="img-frame">
+          <img src="assets/frame_20.jpg" alt="Revize zvuku">
+          <div class="img-caption">Akustické a kinetické ladění clon před sbalením do beden</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 19: Audio Excerpt (Direct Playback) -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">V. Zvukový archiv</div>
+      <div class="slide-num">19</div>
+    </div>
+    <h1 class="slide-title">Hlasy ze Santa Fe: Steina & Woody (1. 8. 2016)</h1>
+    <div class="slide-content">
+      <p>Autentický rozhovor zaznamenaný Kryštofem Peškem na Zoom H2n v domě Vašulkových na Agua Fria Road v předvečer odeslání beden do Evropy:</p>
+      
+      <div class="audio-player-box" style="margin: 1.5rem 0;">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <strong style="color: var(--accent-cyan); font-family: var(--font-mono);">▶ Zvukový záznam: vasulkas_brotherhood.opus</strong>
+          <span style="font-size: 0.85rem; color: var(--text-dim); font-family: var(--font-mono);">Santa Fe, 1. srpna 2016 (Zoom H2n)</span>
+        </div>
+        <audio controls src="assets/vasulka_interview_excerpt.opus"></audio>
+        <p style="font-size: 0.95rem; color: #cbd5e1; font-style: italic;">
+          Steina a Woody reflektují mechaniku Brotherhoodu, strojírenské kořeny v Brně a vztah k válečnému materiálu.
+        </p>
+      </div>
+
+      <div class="card">
+        <h3>Poznámka z terénního deníku (LOG.md)</h3>
+        <p>"Woody sedí u stolu, kouří a s úsměvem říká, že stůl je připraven zabíjet své vlastní lidi. Steina se směje a připomíná, ať nezapomeneme přibalit náhradní optiku."</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 20: Transatlantic Crates -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">VI. Návrat do Brna</div>
+      <div class="slide-num">20</div>
+    </div>
+    <h1 class="slide-title">Logistika návratu: 67 kg beden přes oceán</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Rozložený a otestovaný stůl byl zabalen do dřevěných přepravních beden (záznam <code>crates.txt</code>):</p>
+          <ul>
+            <li><strong>Crate 1:</strong> Hliníková ramena, písty, clony (32 kg).</li>
+            <li><strong>Crate 2:</strong> Projektor Carousel, optika, zrcadla, kabely (21 kg).</li>
+            <li><strong>Crate 3:</strong> Řídicí elektronika, Arduino, Raspberry Pi, napájení (14 kg).</li>
+            <li>Letecký transport Albuquerque ➔ Chicago ➔ Frankfurt ➔ Brno.</li>
+          </ul>
+        </div>
+        <div class="card">
+          <h3>Soubor crates.txt (27. 7. 2016)</h3>
+          <pre><code>Crate #1: Aluminum frame & pistons
+Weight: 32 kg, Dimensions: 140x60x40 cm
+Crate #2: Kodak Carousel & optics
+Weight: 21 kg, Dimensions: 60x50x50 cm
+Crate #3: Electronics & controllers
+Weight: 14 kg, Dimensions: 50x40x30 cm
+Total weight: 67 kg</code></pre>
+          <p style="font-size: 0.85rem; color: var(--accent); margin-top: 0.5rem;">Cíl určení: Hrad Špilberk, Muzeum města Brna.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 21: Spilberk Exhibition -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">VI. Výstava Špilberk</div>
+      <div class="slide-num">21</div>
+    </div>
+    <h1 class="slide-title">Hrad Špilberk (Podzim 2016): V plné síle</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Woody Vašulka se symbolicky vrátil do svého rodného Brna. Instalace Friendly Fire byla srdcem velké retrospektivy:</p>
+          <ul>
+            <li><strong>Galerijní autonomie:</strong> Systém běžel 8 hodin denně bez nutnosti lidského zásahu.</li>
+            <li>Ranní automatický start přes <code>cron</code> a skript <code>run.sh</code>.</li>
+            <li>Periodické zvednutí clon, spuštění kompresoru, projekce diáků a přepnutí do interaktivního módu.</li>
+            <li>Večerní korektní zaparkování pístů a vypnutí optiky.</li>
+          </ul>
+        </div>
+        <div class="img-frame">
+          <img src="assets/friendly_fire_table_16.png" alt="Stavový diagram stolu">
+          <div class="img-caption">Stavový diagram autonomní galerie: ShieldsUp, VideoSync, Interactive</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 22: Viewer Interaction -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">VI. Divácká zkušenost</div>
+      <div class="slide-num">22</div>
+    </div>
+    <h1 class="slide-title">Divák jako střelec: Roland MIDI Pad</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Klíčovým prvkem Friendly Fire je zapojení diváka do válečné mašinérie:</p>
+          <ul>
+            <li>Před stolem je umístěn bicí pad Roland.</li>
+            <li>Úder paličkou nebo rukou vyvolává <strong>okamžitý výstřel / reakci stolu</strong>.</li>
+            <li>Clony padají k zemi s hlasitým pneumatickým syčením.</li>
+            <li>Obraz LaserDisku (RPi) přeskočí na sekvenci zkázy či vojenského výslechu.</li>
+            <li>Carousel cvakne a promítne nový terč na kouřové zrcadlo.</li>
+          </ul>
+          <p style="margin-top: 1rem; color: var(--accent);">Divák není pasivní pozorovatel, stává se operátorem zbraňového systému.</p>
+        </div>
+        <div class="card">
+          <h3>Kinetická dynamika stolu</h3>
+          <p>Zvuk pístů a padajících clon nebyl chybou, ale <strong>akustickou součástí kompozice</strong>. Kovový rachot a syčení vzduchu demonstrovaly syrovost vojenské mechaniky.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Slide 23: Open Source Lessons -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">VII. Závěry & Metodologie</div>
+      <div class="slide-num">23</div>
+    </div>
+    <h1 class="slide-title">Co nás Friendly Fire naučil o mediální archeologii?</h1>
+    <div class="slide-content">
+      <div class="grid-3">
+        <div class="card">
+          <h3>1. Otevřenost je záchrana</h3>
+          <p>Proprietární protokoly a černá železa umírají. Pouze <strong>otevřený hardware (Arduino, RPi) a svobodný software (C, Bash, Linux)</strong> zaručují, že dílo bude žít i za 30 let.</p>
+        </div>
+        <div class="card">
+          <h3>2. Živý autor mění pravidla</h3>
+          <p>Restaurování se žijícími autory není pasivní archivace, ale <strong>pokračování tvůrčího dialogu</strong>. Autor má právo korigovat vyznění díla pro novou dobu.</p>
+        </div>
+        <div class="card">
+          <h3>3. Dokumentace kódem</h3>
+          <p>Nejlepší dokumentací není suchý teoretický text, ale <strong>funkční, komentovaný a verzovaný kód v gitu</strong>. Kód je samotným partem instalace.</p>
+        </div>
+      </div>
+      <blockquote style="margin-top: 1rem;">
+        "Mediální archeologie není věda o mrtvých přístrojích. Je to umění znovu rozběhnout dialog mezi člověkem, elektřinou a mechanickým pohybem."
+      </blockquote>
+    </div>
+  </div>
+
+  <!-- Slide 24: Epilogue & GitHub -->
+  <div class="slide">
+    <div class="slide-header">
+      <div class="slide-category">VIII. Epilog</div>
+      <div class="slide-num">24</div>
+    </div>
+    <h1 class="slide-title">Odkaz a zdroje: Veškerý kód je svobodný</h1>
+    <div class="slide-content">
+      <div class="grid-2">
+        <div>
+          <p>Veškerá práce ze Santa Fe i Špilberku je trvale dostupná ve veřejném repozitáři:</p>
+          <p style="font-family: var(--font-mono); font-size: 1.1rem; color: var(--accent); margin: 0.8rem 0;">
+            github.com/k0f/friendlyfire
+          </p>
+          <ul>
+            <li>Kompletní zdrojové kódy démonů, Arduino firmware a skripty.</li>
+            <li>Podrobný expediční deník <code>LOG.md</code>.</li>
+            <li>Archiv historických kódů z let 1997–1999 (Russell Gritzo, Bruce Hamilton).</li>
+            <li>Audio rozhovor se Steinou a Woodym Vašulkovými (1. 8. 2016).</li>
+          </ul>
+        </div>
+        <div class="card" style="text-align: center; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+          <h3 style="color: var(--accent);">DÍKY ZA POZORNOST</h3>
+          <p style="margin-top: 1rem; font-size: 1.1rem;">Dotazy, diskuse & sdílení zkušeností</p>
+          <div style="margin-top: 1.5rem; font-family: var(--font-mono); color: var(--text-dim); font-size: 0.9rem;">
+            Kryštof Pešek (kof)<br>
+            --τέχνη & kof
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Presentation Controls & Progress -->
+<div id="controls">
+  <div>
+    <button class="nav-btn" id="prev-btn">◀ Předchozí [←]</button>
+    <button class="nav-btn" id="next-btn" style="margin-left: 0.5rem;">Další [→ / Mezerník] ▶</button>
+  </div>
+  <div id="slide-indicator">01 / 24</div>
+  <div>
+    <button class="nav-btn" id="fullscreen-btn">[F] Celá obrazovka</button>
+  </div>
+</div>
+
+<script>
+  const slides = document.querySelectorAll('.slide');
+  const progressBar = document.getElementById('progress-bar');
+  const slideIndicator = document.getElementById('slide-indicator');
+  const prevBtn = document.getElementById('prev-btn');
+  const nextBtn = document.getElementById('next-btn');
+  const fullscreenBtn = document.getElementById('fullscreen-btn');
+
+  let currentSlide = 0;
+  const totalSlides = slides.length;
+
+  function updateSlide(index) {
+    if (index < 0) index = 0;
+    if (index >= totalSlides) index = totalSlides - 1;
+    currentSlide = index;
+
+    slides.forEach((s, i) => {
+      s.classList.toggle('active', i === currentSlide);
+    });
+
+    const pct = ((currentSlide + 1) / totalSlides) * 100;
+    progressBar.style.width = pct + '%';
+    slideIndicator.textContent = `${String(currentSlide + 1).padStart(2, '0')} / ${String(totalSlides).padStart(2, '0')}`;
+  }
+
+  function nextSlide() {
+    if (currentSlide < totalSlides - 1) updateSlide(currentSlide + 1);
+  }
+
+  function prevSlide() {
+    if (currentSlide > 0) updateSlide(currentSlide - 1);
+  }
+
+  // Keyboard navigation
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === ' ' || e.key === 'PageDown') {
+      e.preventDefault();
+      nextSlide();
+    } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
+      e.preventDefault();
+      prevSlide();
+    } else if (e.key === 'Home') {
+      e.preventDefault();
+      updateSlide(0);
+    } else if (e.key === 'End') {
+      e.preventDefault();
+      updateSlide(totalSlides - 1);
+    } else if (e.key === 'f' || e.key === 'F') {
+      e.preventDefault();
+      toggleFullscreen();
+    }
+  });
+
+  // Button navigation
+  nextBtn.addEventListener('click', nextSlide);
+  prevBtn.addEventListener('click', prevSlide);
+
+  function toggleFullscreen() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen().catch(() => {});
+    } else {
+      if (document.exitFullscreen) document.exitFullscreen();
+    }
+  }
+
+  fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+  // Initialize
+  updateSlide(0);
+</script>
+</body>
+</html>
